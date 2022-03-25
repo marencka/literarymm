@@ -1,0 +1,10 @@
+body {
+  margin: 0 auto;
+  background-color: #F1F1F1;
+  font-family: 'Playfair Display', sans-serif;
+}
+
+.wrapper { 
+  width: 1440px;
+  margin: 0 auto;
+}

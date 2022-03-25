@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Literary Mindfulness Meditation</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/register.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+  rel="stylesheet">
+</head>
+<body>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <h1>Sign up</h1>
+        <form method="POST">
+          {% csrf_token %}
+          <!-- Email input -->
+          <div class="email_input">
+            <label for="username">Username</label>
+            <br>
+            <input type="username" name="username" class="form-control" placeholder="johndoe@gmail.com" />
+          </div>
+  
+          <!-- Password input -->
+          <div class="password_input">
+            <label for="password">Password</label>
+            <br>
+            <input type="password" name="password" class="form-control" />
+          </div>
+  
+          <!-- Submit button -->
+          <button type="submit" class="signup">Sign up</button>
+  
+        </form>
+      </div>
+    </div>
+  </body>
+</body>
+</html>

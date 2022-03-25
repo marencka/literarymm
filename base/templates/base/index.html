@@ -9,7 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="css/stylesheet.css">
+  {% load static %} 
+  <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
 </head>
 
 <body>
@@ -26,19 +27,20 @@
           </h3>
 
           <div class="landing_buttons">
-            <button class="login">log in</button>
-            <a href="info.html"><button class="sign_up">sign up</button></a>
+            <a href="login"><button class="login">log in</button></a>
+            <a href="register"><button class="sign_up">sign up</button></a>
 
-            <a href="info.html"><button class="learn_more">learn more</button></a>
+            <a href="#"><button class="learn_more">learn more</button></a>
           </div>
         </div>
 
         <div class="landing_image">
-          <img src="img/landing.jpg" width="620px" height="900px"
+          <img src="{% static 'img/landing.jpg' %}" width="620px" height="900px"
             alt="Picture of a person sitting at the end of the dock on a lake looking at the mountains.">
         </div>
 
       </div>
+
     </div>
   </div>
 </body>

@@ -17,7 +17,7 @@
         <h1>Sign up</h1>
         <form method="POST">
           {% csrf_token %}
-          <!-- Email input -->
+          <!-- Username input -->
           <div class="email_input">
             <label for="username">Username</label>
             <br>
@@ -33,6 +33,18 @@
   
           <!-- Submit button -->
           <button type="submit" class="signup">Sign up</button>
+
+          {% if messages %}
+            {% for message in messages %}
+              <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+
+          <!-- Return button -->
+          <div class="register" style="text-align: center;">
+            <p>Changed your mind? <a href="{% url 'index' %}">Go back to the homepage</a></p>
+          </div>
   
         </form>
       </div>

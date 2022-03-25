@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages 
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 def login_user(request):
   if request.method == "POST":
@@ -21,17 +22,31 @@ def login_user(request):
 
 def register_user(request):
   if request.method == 'POST':
-    form = UserCreationForm(request.POST)
-    if form.is_valid(): 
-      form.save()
-      username = form.cleaned_data.get('username')
-      password = form.cleaned_data.get('password')
-      user = authenticate(username=username, password=password)
+    username = request.POST.get('username')
+    password = request.POST.get('password')
+    
+    #check to see if username already exists
+    if User.objects.filter(username=username).exists():
+      #if it does, return error message and try again
+      messages.success(request, ("Sorry, someone already has that username. Try again..."))
+      return redirect('register')
+    else:
+      #creating a user object:
+      user = User.objects.create_user(username=username, password=password)
+      
+      #save the user to the database
+      user.save()
+
+      #log the newly created user in and redirect
       login(request, user)
       return redirect('logged_in')
+
   else:
-    form = UserCreationForm()
-    print("I got here")
-    return render(request, 'register.html/', {
-      'form': form,
-  })
+    return render(request, 'register.html')
+
+
+def sign_up_start(request):
+  return render(request, 'signup.html')
+
+def returnHome(request):
+  return redirect('index')

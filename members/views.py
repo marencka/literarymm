@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
-from django.contrib import messages 
+from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+
 
 def login_user(request):
   if request.method == "POST":
@@ -22,6 +23,9 @@ def login_user(request):
 
 def register_user(request):
   if request.method == 'POST':
+    fname = request.POST.get('fname')
+    lname = request.POST.get('lname')
+    email = request.POST.get('email')
     username = request.POST.get('username')
     password = request.POST.get('password')
     
@@ -32,8 +36,8 @@ def register_user(request):
       return redirect('register')
     else:
       #creating a user object:
-      user = User.objects.create_user(username=username, password=password)
-      
+      user = User.objects.create_user(first_name=fname, last_name=lname, email= email, username=username, password=password)
+
       #save the user to the database
       user.save()
 

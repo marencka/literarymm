@@ -17,11 +17,45 @@
         <h1>Sign up</h1>
         <form method="POST">
           {% csrf_token %}
+
+          <!-- Script to get Boolean stating whether they want PD quotes or not-->
+          <script>
+            var quote = sessionStorage.getItem("pdQuotes");
+            //console.log(quote);
+          </script>
+
+          <!-- First Name input -->
+          <div class="email_input">
+            <label for="fname">First Name</label>
+            <br>
+            <input type="fname" name="fname" class="form-control" placeholder=" John" />
+          </div>
+
+          <!-- Last Name input -->
+          <div class="email_input">
+            <label for="lname">Last Name</label>
+            <br>
+            <input type="lname" name="lname" class="form-control" placeholder=" Doe" />
+          </div>
+          
+          <!-- Email input -->
+          <div class="email_input">
+            <label for="email">Email</label>
+            <br>
+            <input type="email" name="email" class="form-control" placeholder=" johndoe@gmail.com" />
+          </div>
+
           <!-- Username input -->
           <div class="email_input">
-            <label for="username">Username</label>
-            <br>
-            <input type="username" name="username" class="form-control" placeholder="johndoe@gmail.com" />
+            <label for="username">Username
+               {% if messages %}
+                {% for message in messages %}
+                  <div style="color: red">{{ message }}</div>
+                {% endfor %}
+              {% endif %}
+            </label>
+            
+            <input type="username" name="username" class="form-control" placeholder=" johnD456" />
           </div>
   
           <!-- Password input -->
@@ -33,13 +67,6 @@
   
           <!-- Submit button -->
           <button type="submit" class="signup">Sign up</button>
-
-          {% if messages %}
-            {% for message in messages %}
-              <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-            {% endfor %}
-          </ul>
-          {% endif %}
 
           <!-- Return button -->
           <div class="register" style="text-align: center;">

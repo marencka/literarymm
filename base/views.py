@@ -9,3 +9,6 @@ def home(request):
 
 def logged_in(request):
   return render(request, 'base/loggedin.html', {})
+
+def info(request):
+  return render(request, 'base/info.html', {})

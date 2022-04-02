@@ -5,7 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Literary Mindfulness Meditation</title>
-  <link rel="stylesheet" href="css/info_stylesheet.css">
+  {% load static %} 
+  <link rel="stylesheet" href="{% static 'css/info_stylesheet.css' %}">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
   rel="stylesheet">
 </head>
@@ -13,7 +14,7 @@
   <div class="wrapper">
     <div id="info1_container" class="info1_container">
       <h1>What is Literary Mindfulness Meditation?</h1>
-      <img src="img/lightbulb.png" class="lightbulb" height="300px" width="290px" alt="An outline of a lightbulb">
+      <img src="{% static 'img/lightbulb.png' %}" class="lightbulb" height="300px" width="290px" alt="An outline of a lightbulb">
       <div class="main_text">
         <p>
           <br>
@@ -30,7 +31,7 @@
       </div>
 
     <div class="info_buttons">
-      <a href="index.html"><button class="return">return to previous page</button></a>
+      <a href="{% url 'index' %}"><button class="return">return to the home page</button></a>
       <button class="continue" onclick="next()">continue</button>
     </div>
     </div>
@@ -38,7 +39,7 @@
 
     <div id="info2_container" class="info2_container" style="display:none;">
       <h1>What is Active Reflection?</h1>
-      <img src="img/yellow_lightbulb.png" class="lightbulb" height="300px" width="290px" alt="An outline of a lightbulb">
+      <img src="{% static 'img/yellow_lightbulb.png' %}" class="lightbulb" height="300px" width="290px" alt="An outline of a lightbulb">
       <div class="main_text">
         <p>
           <br>
@@ -53,7 +54,7 @@
 
     <div class="info_buttons">
       <button class="return" onclick="previous()">return to previous page</button>
-      <a href="signup.html"><button class="continue">continue</button></a>
+      <a href="{% url 'sign_up_start' %}"><button class="continue">I'd like to sign up!</button></a>
     </div>
     </div>
 
@@ -61,6 +62,6 @@
   </div>
 
 
-  <script src="js/script.js"></script>
+  <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

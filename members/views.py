@@ -51,6 +51,3 @@ def register_user(request):
 
 def sign_up_start(request):
   return render(request, 'signup.html')
-
-def returnHome(request):
-  return redirect('index')

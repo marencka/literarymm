@@ -18,12 +18,6 @@
         <form method="POST">
           {% csrf_token %}
 
-          <!-- Script to get Boolean stating whether they want PD quotes or not-->
-          <script>
-            var quote = sessionStorage.getItem("pdQuotes");
-            //console.log(quote);
-          </script>
-
           <!-- First Name input -->
           <div class="email_input">
             <label for="fname">First Name</label>
@@ -64,7 +58,22 @@
             <br>
             <input type="password" name="password" class="form-control" />
           </div>
-  
+
+          <br>
+
+          <div style="background-color: #d3ebf0; padding: 20px; border-radius: 50px; border-color: black; border-width: 0.5px; border-style: solid;">
+            
+            <label>Is the following selection correct? If not, select whichever answer best suites your preferences:</label>
+            <br>
+            <br>
+            <input type="radio" id="Yes" name="yesPDQuotes" value="Yes">
+              <label for="Yes">YES, I'd like quotes about Parkinson's Disease included in my meditation experience.</label>
+            <br>
+            <br>
+            <input type="radio" id="No" name="noPDQuotes" value="No">
+              <label for="No">NO, I wouldn't like quotes about Parkinson's Disease included in my meditation experience.</label><br>
+          </div>
+          
           <!-- Submit button -->
           <button type="submit" class="signup">Sign up</button>
 
@@ -78,4 +87,15 @@
     </div>
   </body>
 </body>
+
+  <script>
+    window.onload = function() {
+      if (sessionStorage.getItem('wantPDQuotes') === "true") {
+        document.getElementById('Yes').checked = "checked";
+      } else {
+        document.getElementById('No').checked = "checked";
+      }
+    }
+  </script>
+
 </html>

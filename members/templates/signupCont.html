@@ -12,32 +12,25 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="container">
-            <h1>What best describes you?</h1>
+        <div class="container" style="width: 800px;">
+            <h1>Would you like to see material related to Parkinson's Disease as part of your meditation?</h1>
 
             <div class="type">
 
-                <a href="{% url 'signupCont' %}" style="text-decoration: none;">
-                    <button class="wellness_container">
-                        <p>I am a person looking to <strong>improve my well-being</strong></p>
+                <a href="{% url 'register' %}" style="text-decoration: none;">
+                    <button onclick="sessionStorage.setItem('wantPDQuotes', 'true')" class="wellness_container">
+                        <p>I <strong>would </strong>like to see quotes/images related to Parkinson's Disease as part of my meditation</p>
                         <img src="{% static 'img/yinyang.png' %}" height="150px" width="150px" alt="An outline of a head with a yin yang symbol">
                     </button>
                 </a>
 
                 <a href="{% url 'register' %}" style="text-decoration: none;">
-                    <button onclick="sessionStorage.setItem('wantPDQuotes', 'true')" class="parkinson_container">
-                        <p>I am a person with <strong>Parkinson's disease</strong></p>
+                    <button onclick="sessionStorage.setItem('wantPDQuotes', 'false')" class="parkinson_container">
+                        <p>I <strong>would not </strong> like to see quotes/images related to Parkinson's Disease as part of my meditation</p>
                         <img src="{% static 'img/parkinsons.png' %}" height="150px" width="150px" alt="An outline of a head with plants near the back of the skull">
                     </button>
                 </a>
-                
-                <a href="{% url 'signupCont' %}" style="text-decoration: none;">
-                    <button class="care_container">
-                        <p>I am a <strong>care giver</strong> to a person with Parkinson's disease</p>
-                        <img src="{% static 'img/caregiver.png' %}" height="150px" width="150px" alt="An outline of two faces looking at each other">
-                    </button>
-                </a>
-                
+
             </div>
             
             <a href="{% url 'index' %}"><button class="return">return to home page</button></a>

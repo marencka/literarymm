@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from .models import Profile
 
 
 def login_user(request):
@@ -28,6 +29,8 @@ def register_user(request):
     email = request.POST.get('email')
     username = request.POST.get('username')
     password = request.POST.get('password')
+    yesPDQuotes = request.POST.get('yesPDQuotes')
+    noPDQuotes = request.POST.get('noPDQuotes')
     
     #check to see if username already exists
     if User.objects.filter(username=username).exists():
@@ -36,10 +39,23 @@ def register_user(request):
       return redirect('register')
     else:
       #creating a user object:
-      user = User.objects.create_user(first_name=fname, last_name=lname, email= email, username=username, password=password)
+      user = User.objects.create_user(first_name=fname, last_name=lname, email=email, username=username, password=password)
 
       #save the user to the database
       user.save()
+
+      #if yesPDQuotes has is checked, 'checked' attribute should be true
+      if(yesPDQuotes):
+        #Create the user profile
+        profile = Profile(user=user, wantPDQuotes=True)
+
+      else:
+        #noPDQuotes must be true
+        #Create the user profile
+        profile = Profile(user=user, wantPDQuotes=False)
+      
+      #save profile to the database
+      profile.save()
 
       #log the newly created user in and redirect
       login(request, user)
@@ -51,3 +67,6 @@ def register_user(request):
 
 def sign_up_start(request):
   return render(request, 'signup.html')
+
+def signupCont(request):
+  return render(request, 'signupCont.html')

@@ -66,11 +66,11 @@
             <label>Is the following selection correct? If not, select whichever answer best suites your preferences:</label>
             <br>
             <br>
-            <input type="radio" id="Yes" name="yesPDQuotes" value="Yes">
+            <input onClick="yesUncheck()" type="radio" id="Yes" name="yesPDQuotes" value="Yes">
               <label for="Yes">YES, I'd like quotes about Parkinson's Disease included in my meditation experience.</label>
             <br>
             <br>
-            <input type="radio" id="No" name="noPDQuotes" value="No">
+            <input onClick="noUncheck()" type="radio" id="No" name="noPDQuotes" value="No">
               <label for="No">NO, I wouldn't like quotes about Parkinson's Disease included in my meditation experience.</label><br>
           </div>
           
@@ -95,6 +95,23 @@
       } else {
         document.getElementById('No').checked = "checked";
       }
+    }
+
+    function yesUncheck() {
+      var yesPDQuoteButton = document.getElementById('Yes');
+      var noPDQuoteButton = document.getElementById('No');
+      
+      yesPDQuoteButton.checked = true;
+      noPDQuoteButton.checked = false;
+    }
+
+    function noUncheck() {
+      var yesPDQuoteButton = document.getElementById('Yes');
+      var noPDQuoteButton = document.getElementById('No');
+
+      noPDQuoteButton.checked = true;
+      yesPDQuoteButton.checked = false;
+
     }
   </script>
 

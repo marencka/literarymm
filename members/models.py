@@ -1,3 +1,5 @@
+from fnmatch import fnmatchcase
+from xml.sax.handler import feature_namespace_prefixes
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -9,4 +11,3 @@ class Profile(models.Model):
 
     def __str__(self):
         return str(self.user.first_name)
-

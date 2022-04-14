@@ -70,3 +70,4 @@ def sign_up_start(request):
 
 def signupCont(request):
   return render(request, 'signupCont.html')
+

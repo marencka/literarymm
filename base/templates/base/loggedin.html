@@ -9,5 +9,9 @@
 <body>
   <h1>Hello {{user.username}}</h1>
   <p><a href="{% url 'logout' %}">Log Out</a></p>
+
+  {% for item in all %}
+  <p>{{ item }}</p>
+  {% endfor %}
 </body>
 </html>

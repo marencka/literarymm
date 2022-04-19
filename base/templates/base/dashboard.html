@@ -9,10 +9,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="dashboard_css.css">
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'css/dashboard_css.css' %}">
 
-    <link href="iCalendar.css" rel="stylesheet">
-    <script src="iCalendar.js"></script>
+    <link href="{% static 'css/iCalendar.css' %}" rel="stylesheet">
+    <script src="{% static 'js/iCalendar.js' %}"></script>
 
     <!-- link to script for iconify, in order to insert icons into the document -->
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
@@ -31,12 +32,12 @@
                     <a> <span class="iconify-inline" data-icon="carbon:information-square-filled"
                             style="color: #034b59;"></span> Information</a>
                     <a> <span class="iconify-inline" data-icon="bxs:contact" style="color: #034b59;"></span> Contact</a>
-                    <a> <span class="iconify-inline" data-icon="bxs:log-out" style="color: #034b59;"></span> Log Out</a>
+                    <a href="{% url 'logout' %}"> <span class="iconify-inline" data-icon="bxs:log-out" style="color: #034b59;"></span> Log Out</a>
                 </div>
 
                 <div class="user_info">
-                    <img src="parkinsons.png" alt="parkinsons_logo">
-                    <p>[username]</p>
+                    <img src="{% static 'img/parkinsons.png' %}" alt="parkinsons_logo">
+                    <p>{{user.username}}</p>
                 </div>
             </div>
         </div>
@@ -44,13 +45,13 @@
         <div class="hello">
             <div class="hello_wrapper">
                 <div class="welcome">
-                    <h2>Good afternoon, [username]</h2>
+                    <h2>Good afternoon, {{user.first_name}}</h2>
                     <h3>Welcome back!</h3>
-                    <div><img src="59893 1.png" alt="individuals thinking"></div>
+                    <div><img src="{% static 'img/individuals_thinking.png' %}" alt="individuals thinking"></div>
                 </div>
 
                 <div class="menu">
-                    <div class="menu_button"> <button id="today_ac">Today's activity</button> </div>
+                    <div class="menu_button"> <button id="today_ac" onclick="startMeditation()">Today's activity</button> </div>
                     <div class="menu_button"> <button id="pdpr">Parkinson’s Disease Progress Report</button> </div>
                     <div class="menu_button"> <button id="random_ac">Randomized reflection</button></div>
                     <div class="menu_button"> <button id="past_ref">Past reflections</button> </div>
@@ -101,6 +102,12 @@
         document.addEventListener('iCalendarDateSelected', function (event) {
             console.log(iCal.selectedDate);
         });
+
+        //Redirects to the Meditation Activity
+        function startMeditation() {
+            window.location.href = window.location.href + "meditation/";
+            // return window.location.href;
+        }
 
     </script>
 </body>

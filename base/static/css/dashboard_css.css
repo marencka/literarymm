@@ -73,6 +73,8 @@ body {
   word-wrap: normal;
   display: block;
   margin-bottom: 60px;
+  text-decoration: none;
+  color: black;
 }
 
 .options a:hover {

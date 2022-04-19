@@ -10,7 +10,10 @@ def home(request):
 
 def logged_in(request):
   all_quotes = Quote.objects.all 
-  return render(request, 'base/loggedin.html', {'all': all_quotes})
+  return render(request, 'base/dashboard.html', {'all': all_quotes})
 
 def info(request):
   return render(request, 'base/info.html', {})
+
+def meditation(request):
+  return render(request, 'base/meditation.html', {})

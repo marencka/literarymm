@@ -1,0 +1,230 @@
+[v-cloak] {
+    display: none;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 1s !important;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0 !important;
+}
+
+
+/** Calendar **/
+
+#cal {
+    -moz-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+    margin: 20px auto;
+    font-family: 'Playfair Display', sans-serif;
+    
+    display: table;
+}
+
+#cal .header {
+    cursor: default;
+    background: #fff;
+    height: 40px;
+    position: relative;
+    color: #fff;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-weight: bold;
+    color: #52726E;
+    font-size: 26px;
+    text-shadow: 0.5px 0px 0 #222;
+    text-transform: uppercase;
+}
+
+.brackets {
+    color: #52726E;
+}
+
+#cal .header span {
+    display: inline-block;
+    line-height: 34px;
+}
+
+#cal .header .button {
+    width: 24px;
+    text-align: center;
+    position: absolute;
+}
+
+#cal .header .left.button {
+    left: 0;
+    -webkit-border-top-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    border-top-left-radius: 5px;
+}
+
+#cal .header .right.button {
+    right: 0;
+    top: 0;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-right-radius: 5px;
+}
+
+#cal .header .button:hover {
+    background-color: #c9d5c9;
+}
+
+#cal .header .month-year {
+    letter-spacing: 1px;
+    width: 100%;
+    text-align: center;
+}
+
+#cal table {
+    background: #fff;
+    border-collapse: collapse;
+}
+
+#cal td {
+    color: #2b2b2b;
+    width: 90px;
+    height: 80px;
+    line-height: 50px;
+    text-align: center;
+    border: 1px none;
+    cursor: default;
+}
+
+#cal #days td {
+    height: 26px;
+    line-height: 26px;
+    text-transform: uppercase;
+    font-size: 90%;
+    color: #9e9e9e;
+}
+
+#cal #days td:not(:last-child) {}
+
+#cal #cal-frame td.today {
+    background: #ededed;
+    color: #8c8c8c;
+    border-radius: 100px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+}
+
+#cal #cal-frame td span {
+    font-size: 80%;
+    position: relative;
+}
+
+#cal #cal-frame td span:first-child {
+    bottom: 5px;
+}
+
+#cal #cal-frame td span:last-child {
+    top: 5px;
+}
+
+#cal #cal-frame table.curr {
+    float: left;
+}
+
+#cal #cal-frame table.temp {
+    position: absolute;
+}
+
+table#days tbody tr {
+    border-bottom: 1px solid #f1f1f1;
+}
+
+table#days td.weekday {
+    color: #5d5d5d !important;
+    font-weight: 700;
+}
+
+div#cal {
+    font-family: 'Playfair Display', sans-serif;
+}
+
+table.curr tbody tr:not(:last-child) {
+    border-bottom: 1px solid #f1f1f1;
+}
+
+table.curr tbody tr:nth-child(5) {
+    border-bottom: none !important;
+}
+
+table.curr tbody tr:last-child {
+    border-bottom: none !important;
+}
+
+div#cal-frame div.day {
+    margin: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+    font-size: 14px;
+    border-radius: 100px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+}
+
+.header a.prev,
+.header a.next {
+    color: #fff;
+}
+
+.day.weekend {
+    color: #b5b5b5;
+}
+
+a.calendarLink {
+    color: #222;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+
+}
+
+div.today a.calendarLink {
+    color: #FFFFFF;
+    text-shadow: 1px 0px 0 #222;
+    font-weight: 700;
+    background: #8C645C;
+    border-radius: 14px;
+    -moz-border-radius: 14px;
+    -webkit-border-radius: 14px;
+}
+
+a.calendarLink.selected-link {
+    background-color: #d8d8d8;
+    border-radius: 50px;
+}
+
+a.calendarLink:hover {
+    color: #fff;
+    background: #5F5F5F;
+    transition: 0.3s;
+    border-radius: 100px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+}
+
+@media only screen and (max-width: 400px) {
+    #cal td {
+        width: 75px;
+        height: 50px;
+        line-height: 75px;
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    a.calendarLink {}
+}
+
+
+/** Calendar **/

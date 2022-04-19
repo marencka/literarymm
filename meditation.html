@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditation</title>
+    <link rel="stylesheet" href="meditation_css.css">
+
+    <!-- gets rid of favison.icon error -->
+    <link rel="shortcut icon" href="#">
+    <!-- meditation script -->
+    <script src="meditation_activity.js" type="module"></script>
+    <!-- script for symbol -->
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <button id="home_button" title="go back to home page"> <span class="iconify-inline" data-icon="ant-design:home-outlined"></span> </button>
+    </header>
+
+    <div class="wrapper">
+        <div class="quote">
+            <p id="">“For every minute you remain angry, you give up sixty seconds of peace of mind.” </p>
+            <p id="author">Ralph Waldo Emerson</p>
+        </div>
+
+        <div class="count_down">
+            <p id="timer">01:59</p>
+        </div>
+
+        <div class="button_container">
+            <button id="reflect_button" title="click here to start writing your reflection">reflect</button>
+        </div>
+
+        <div class="textbox_container" id="modal_container">
+            <div class="textbox_area">
+                <label id="textbox_desription">Great job! You completed the meditation.<br> Now write down your thoughts and
+                    feelings below <br> to complete <span>the reflection</span></label>
+                <textarea id="text_box" rows="20"
+                    cols="80">Type right here! You can remove this text by using "delete" button on your device</textarea>
+                <br>
+                <button id="later_button">complete later</button>
+                <button id="submit_button">submit</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

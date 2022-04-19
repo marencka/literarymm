@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="dashboard_css.css">
+
+    <link href="iCalendar.css" rel="stylesheet">
+    <script src="iCalendar.js"></script>
+
+    <!-- link to script for iconify, in order to insert icons into the document -->
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <div class="sidebar">
+            <div class="sidebar_wrapper">
+                <div class="title">
+                    <h2 id="lmm_title">Literary Mindfulness Meditation</h2>
+                </div>
+
+                <div class="options">
+                    <a> <span class="iconify-inline" data-icon="carbon:information-square-filled"
+                            style="color: #034b59;"></span> Information</a>
+                    <a> <span class="iconify-inline" data-icon="bxs:contact" style="color: #034b59;"></span> Contact</a>
+                    <a> <span class="iconify-inline" data-icon="bxs:log-out" style="color: #034b59;"></span> Log Out</a>
+                </div>
+
+                <div class="user_info">
+                    <img src="parkinsons.png" alt="parkinsons_logo">
+                    <p>[username]</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="hello">
+            <div class="hello_wrapper">
+                <div class="welcome">
+                    <h2>Good afternoon, [username]</h2>
+                    <h3>Welcome back!</h3>
+                    <div><img src="59893 1.png" alt="individuals thinking"></div>
+                </div>
+
+                <div class="menu">
+                    <div class="menu_button"> <button id="today_ac">Today's activity</button> </div>
+                    <div class="menu_button"> <button id="pdpr">Parkinson’s Disease Progress Report</button> </div>
+                    <div class="menu_button"> <button id="random_ac">Randomized reflection</button></div>
+                    <div class="menu_button"> <button id="past_ref">Past reflections</button> </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="info">
+            <div class="info_wrapper">
+                <div class="calendar_wrap">
+                    <div id="calendar">
+                    </div>
+                </div>
+                <div class="instructions">
+                    <h1>Instructions</h1>
+                    <!-- use js to insert user instructions that are relevant to specific user type -->
+                    <div class="user_instructions">
+                        <!-- DON'T REMOVE INSTRUCTION_CONTAINER DIV. It is used by flexbox to center elements inside of the div user_instructions -->
+                        <div class="instruction_container">
+                            <h3>Goal of Literary Mindfulness Meditation:</h3>
+                            <li id="goal_med">You are breathing slowly, deeply thinking, and becoming with the readings
+                                and artwork. You are focused on this specific moment. </li>
+                            <h3>Goal of Active Reflection:</h3>
+                            <li id="exercise_med">This is the exercise of writing about what you are currently feeling
+                                after reading the quote(s) and viewing the picture. Expression of your thoughts is
+                                important; these thoughts may reflect your overall sense of welness, mood, and mental
+                                health-for-the-moment. </li>
+                            <h3>Parkinson’s Disease Progress Report (PDPR)</h3>
+                            <li id="PDPR_med">This will give you a weekly-mental health score. The PDPR will be a
+                                10-question survey about life with PD (stress levels, life-work-exercise balance, and
+                                overall wellness will be monitored). </li>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+        var iCal = new iCalendar('calendar');
+        iCal.render();
+
+        //Listen to calendar date selected event
+        document.addEventListener('iCalendarDateSelected', function (event) {
+            console.log(iCal.selectedDate);
+        });
+
+    </script>
+</body>
+
+</html>

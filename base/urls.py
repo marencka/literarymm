@@ -7,7 +7,6 @@ urlpatterns = [
   path('userDashboard/', views.dashboard, name="dashboard"),
   path('info/', views.info, name="info"),
   path('userDashboard/meditation/', views.meditation, name="meditation"),
-  path('database/', views.data, name="data"), 
+  path('userDashboard/pdpr/', views.pdpr, name="pdpr"), 
   path('userDashboard/history', views.history, name="history"),
-
 ]

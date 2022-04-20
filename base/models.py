@@ -26,3 +26,106 @@ class Reflection(models.Model):
 
   def __str__(self):
     return str(str(self.date) + ' -- ' + self.text)
+
+class PDPR(models.Model):
+    NEVER = '1'
+    OCCASIONALLY = '2'
+    SOMETIMES = '3' 
+    OFTEN = '4' 
+    ALWAYS = '5' 
+
+    PDPR_CHOICES = [
+        (NEVER, 'Never'), 
+        (OCCASIONALLY, 'Occasionally'),
+        (SOMETIMES, 'Sometimes'),
+        (OFTEN, 'Often'),
+        (ALWAYS, 'Always')
+    ]
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    date = models.DateField(auto_now_add=True)
+    q1 = models.CharField(
+        max_length=1,
+        choices=PDPR_CHOICES,
+        default=NEVER
+    )
+    q2 = models.CharField(
+        max_length=1,
+        choices=PDPR_CHOICES,
+        default=NEVER
+    )
+    q3 = models.CharField(
+        max_length=1,
+        choices=PDPR_CHOICES,
+        default=NEVER
+    )
+    q4 = models.CharField(
+        max_length=1,
+        choices=PDPR_CHOICES,
+        default=NEVER
+    )
+    q5 = models.CharField(
+        max_length=1,
+        choices=PDPR_CHOICES,
+        default=NEVER
+    )
+    q6 = models.CharField(
+        max_length=1,
+        choices=PDPR_CHOICES,
+        default=NEVER
+    )
+    q7 = models.CharField(
+        max_length=1,
+        choices=PDPR_CHOICES,
+        default=NEVER
+    )
+    q8 = models.CharField(
+        max_length=1,
+        choices=PDPR_CHOICES,
+        default=NEVER
+    )
+    q9 = models.CharField(
+        max_length=1,
+        choices=PDPR_CHOICES,
+        default=NEVER
+    )
+    q10 = models.CharField(
+        max_length=1,
+        choices=PDPR_CHOICES,
+        default=NEVER
+    )
+    q11 = models.CharField(
+        max_length=1,
+        choices=PDPR_CHOICES,
+        default=NEVER
+    )
+    q12 = models.CharField(
+        max_length=1,
+        choices=PDPR_CHOICES,
+        default=NEVER
+    )
+    q1 = models.CharField(
+        max_length=1,
+        choices=PDPR_CHOICES,
+        default=NEVER
+    )
+    q13 = models.CharField(
+        max_length=1,
+        choices=PDPR_CHOICES,
+        default=NEVER
+    )
+    q14 = models.CharField(
+        max_length=1,
+        choices=PDPR_CHOICES,
+        default=NEVER
+    )
+    q15 = models.CharField(
+        max_length=1,
+        choices=PDPR_CHOICES,
+        default=NEVER
+    )
+
+    def __str__(self):
+        return str(self.user + '--' + str(self.date))
+
+
+

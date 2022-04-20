@@ -13,11 +13,11 @@ def login_user(request):
     user = authenticate(request, username=username, password=password)
     if user is not None:
       login(request, user)
-      return redirect('logged_in')
+      return redirect('dashboard')
 
     else: 
       messages.success(request, ("There was an error logging in. Try again..."))
-      return redirect('login')
+      return redirect('log_in')
   else:
     return render(request, 'login.html', {})
 
@@ -59,7 +59,7 @@ def register_user(request):
 
       #log the newly created user in and redirect
       login(request, user)
-      return redirect('logged_in')
+      return redirect('dashboard')
 
   else:
     return render(request, 'register.html')

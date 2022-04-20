@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Literary Mindfulness Meditation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet">
+  {% load static %} 
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="stylesheet" href="{% static 'css/history.css' %}">
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Past reflections</h1>
+    <div class="separator"></div>
+    {% for item in all %}
+    <div class="reflection">
+      <div class="date">
+        <h3>{{ item.date }}</h3>
+      </div>
+      <div class="text">
+        <p>{{ item.text }}</p>
+      </div>
+      <div class="separator"></div>
+    </div>
+    {% endfor %}
+
+    <button id="back" type="back" onClick="javascript:history.go(-1);">return to dashboard</button>
+  </div>
+</body>
+</html>

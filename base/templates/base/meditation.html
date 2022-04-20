@@ -19,34 +19,41 @@
 
 <body>
     <header>
-        <button id="home_button" title="go back to home page"> <span class="iconify-inline" data-icon="ant-design:home-outlined"></span> </button>
+        <button id="home_button" onClick="javascript:history.go(-1);" title="go back to home page"> <span class="iconify-inline" data-icon="ant-design:home-outlined"></span> </button>
     </header>
 
     <div class="wrapper">
+        <img src="{{picture.image.url}}" alt="" width="1000px" height="800px">
         <div class="quote">
-            <p id="">“For every minute you remain angry, you give up sixty seconds of peace of mind.” </p>
-            <p id="author">Ralph Waldo Emerson</p>
+            <p id="quote_text">{{ quote.quote }}</p>
+            <p id="author">{{ quote.author }}</p>
         </div>
 
         <div class="count_down">
-            <p id="timer">01:59</p>
+            <p id="timer">00:59</p>
         </div>
 
         <div class="button_container">
             <button id="reflect_button" title="click here to start writing your reflection">reflect</button>
         </div>
 
-        <div class="textbox_container" id="modal_container">
-            <div class="textbox_area">
-                <label id="textbox_desription">Great job! You completed the meditation.<br> Now write down your thoughts and
+                {% if submitted %}
+                Your reflection has been saved. 
+              {% else %} 
+              <form action="" method="POST">
+                {% csrf_token %} 
+                {{ form.as_p }}
+            
+                <input type="submit" value="Submit">
+              </form>
+              {% endif %}
+                <!-- <label id="textbox_desription">Great job! You completed the meditation.<br> Now write down your thoughts and
                     feelings below <br> to complete <span>the reflection</span></label>
                 <textarea id="text_box" rows="20"
-                    cols="80">Type right here! You can remove this text by using "delete" button on your device</textarea>
+                    cols="80" placeholder="Type here"></textarea>
                 <br>
                 <button id="later_button">complete later</button>
-                <button id="submit_button">submit</button>
-            </div>
-        </div>
+                <button id="submit_button">submit</button> -->
     </div>
 
 </body>

@@ -17,7 +17,7 @@ def login_user(request):
 
     else: 
       messages.success(request, ("There was an error logging in. Try again..."))
-      return redirect('login')
+      return redirect('log_in')
   else:
     return render(request, 'login.html', {})
 

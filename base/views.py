@@ -33,7 +33,6 @@ def meditation(request):
 
 def pdpr(request):
   all = PDPR.objects.filter(user=request.user)
-  submitted = False 
   if request.method == "POST":
     form = PDPRForm(request.POST)
     if form.is_valid():
@@ -44,11 +43,9 @@ def pdpr(request):
       return redirect('dashboard')
   else:
     form = PDPRForm
-    if 'submitted' in request.GET:
-      submitted = True
   return render(request, 'base/db.html', {'all': all, 'form': form})
 
 
 def history(request):
-  past_reflections = Reflection.objects.filter(user=request.user) 
+  past_reflections = Reflection.objects.order_by('-date').filter(user=request.user)
   return render(request, 'base/history.html', {"all": past_reflections})

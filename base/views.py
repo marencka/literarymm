@@ -39,14 +39,15 @@ def pdpr(request):
   if request.method == "POST":
     form = PDPRForm(request.POST)
     if form.is_valid():
-      reflection = form.save(commit=False)
-      reflection.user = request.user
-      reflection.save()
+      pdpr = form.save(commit=False)
+      pdpr.user = request.user
+      pdpr.total = pdpr.q1 + pdpr.q2 + pdpr.q3 + pdpr.q4 + pdpr.q5 + pdpr.q6 + pdpr.q7 + pdpr.q8 + pdpr.q9 + pdpr.q10 + pdpr.q11 + pdpr.q12 + pdpr.q13 + pdpr.q14 + pdpr.q15
+      pdpr.save()
       messages.success(request, ("Your reflection has been saved"))
       return redirect('dashboard')
   else:
     form = PDPRForm
-  return render(request, 'base/db.html', {'all': all, 'form': form})
+  return render(request, 'base/pdpr.html', {'all': all, 'form': form})
 
 
 def history(request):

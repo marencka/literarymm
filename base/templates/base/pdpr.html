@@ -7,18 +7,131 @@
   <title>Literary Meditation Mindfulness</title>
 </head>
 <body>
+  <div class="wrapper">
+    <h1>Parkinson's Disease Progress Report (PDPR)</h1>
 
-  <br>
-  <br>
-  {% if submitted %}
-    Your reflection has been saved. 
-  {% else %} 
-  <form action="" method="POST">
-    {% csrf_token %} 
-    {{ form.as_p }}
+    <div class="explanation">
+      <h3>PDPR is a <u>balance sheet</u> created to give a <u>weekly mental health score for someone 
+        with Parkinson's disease and/or their Care Partner(s)</u>. The PDPR will be a 15-question survey
+      about Quality-of-Life (QoL). Stress, life-work-exercise balance, and overall wellness will be monitored.</h3>
+    </div>
 
-    <input type="submit" value="Submit">
-  </form>
-  {% endif %}
+    <div class="scoring">
+      <h3><strong>Please answer the following questions with regards to the past week (using a Likert scalee scoring system):
+      </strong></h3>
+
+      <div class="scores">
+        <p>Never - 1</p>
+        <p>Occasionally - 2</p>
+        <p>Sometimes - 3</p>
+        <p>Often - 4</p>
+        <p>Always - 5</p>
+      </div>
+    </div>
+
+    <div class="pdpr">
+      <form action="" method="POST">
+        <div class="section">
+          <h3>Life Skills</h3>
+        </div>
+        <div class="partition"></div>
+        {% csrf_token %} 
+        
+        <div class="question">
+          <label for="q1">Question #1: Had difficulty functioning at work?</label>
+          {{form.q1}}
+        </div>
+
+        <div class="question">
+          <label for="q2">Question #2: Had problems exercising?</label>
+          {{form.q2}}
+        </div>
+
+        <div class="question">
+          <label for="q3">Question #3: Had problems sleeping? </label>
+          {{form.q3}}
+        </div>
+
+        <div class="question">
+          <label for="q4">Question #4: Had difficulty with daily personal cleaning/grooming and getting dressed?</label>
+          {{form.q4}}
+        </div>
+
+        <div class="question">
+          <label for="q5">Question #5: Had problems preparing food and eating meals?</label>
+          {{form.q5}}
+        </div>
+
+        <div class="question">
+          <label for="q6">Question #6: Had problems concentrating at work or at home watching TV?</label>
+          {{form.q6}}
+        </div>
+
+        <div class="question">
+          <label for="q7">Question #7: Had problems communicating with others?</label>
+          {{form.q7}}
+        </div>
+
+        <div class="question">
+          <label for="q8">Question #8: Had pain in body, joints, or muscles?</label>
+          {{form.q8}}
+        </div>
+
+        <div class="section">
+          <h3>Life Stress</h3>
+        </div>
+        <div class="partition"></div>
+        
+        <div class="question">
+          <label for="q9">Question #9: Felt sad and depressed?</label>
+          {{form.q9}}
+        </div>
+
+        <div class="question">
+          <label for="q10">Question #10: Felt sad and depressed?</label>
+          {{form.q10}}
+        </div>
+
+        <div class="question">
+          <label for="q10">Question #10: Felt sad and depressed?</label>
+          {{form.q10}}
+        </div>
+
+        <div class="question">
+          <label for="q11">Question #11: Felt anxious?</label>
+          {{form.q11}}
+        </div>
+
+        <div class="question">
+          <label for="q12">Question #12: Felt embarrassed to be seen or go out in public?</label>
+          {{form.q12}}
+        </div>
+
+        <div class="question">
+          <label for="q13">Question #13: Felt a lack of support from loved ones or close friends?</label>
+          {{form.q13}}
+        </div>
+
+        <div class="section">
+          <h3>Life Coping</h3>
+        </div>
+        <div class="partition"></div>
+
+        <div class="question">
+          <label for="q14">Question #14: Felt un-balanced (collectively) in life-work-family-living with Parkinson’s disease?</label>
+          {{form.q14}}
+        </div>
+
+        <div class="question">
+          <label for="q15">Question #15: Felt unable to manage (overall) daily life-challenge(s) from Parkinson’s disease? </label>
+          {{form.q15}}
+        </div>
+
+
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+
+  </div>
 </body>
 </html>

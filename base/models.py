@@ -28,104 +28,35 @@ class Reflection(models.Model):
     return str(str(self.date) + ' -- ' + self.text)
 
 class PDPR(models.Model):
-    NEVER = '1'
-    OCCASIONALLY = '2'
-    SOMETIMES = '3' 
-    OFTEN = '4' 
-    ALWAYS = '5' 
+    class Scores(models.IntegerChoices):
+        NEVER = '1'
+        OCCASIONALLY = '2'
+        SOMETIMES = '3' 
+        OFTEN = '4' 
+        ALWAYS = '5' 
 
-    PDPR_CHOICES = [
-        (NEVER, 'Never'), 
-        (OCCASIONALLY, 'Occasionally'),
-        (SOMETIMES, 'Sometimes'),
-        (OFTEN, 'Often'),
-        (ALWAYS, 'Always')
-    ]
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     date = models.DateField(auto_now_add=True)
-    q1 = models.CharField(
-        max_length=1,
-        choices=PDPR_CHOICES,
-        default=NEVER
-    )
-    q2 = models.CharField(
-        max_length=1,
-        choices=PDPR_CHOICES,
-        default=NEVER
-    )
-    q3 = models.CharField(
-        max_length=1,
-        choices=PDPR_CHOICES,
-        default=NEVER
-    )
-    q4 = models.CharField(
-        max_length=1,
-        choices=PDPR_CHOICES,
-        default=NEVER
-    )
-    q5 = models.CharField(
-        max_length=1,
-        choices=PDPR_CHOICES,
-        default=NEVER
-    )
-    q6 = models.CharField(
-        max_length=1,
-        choices=PDPR_CHOICES,
-        default=NEVER
-    )
-    q7 = models.CharField(
-        max_length=1,
-        choices=PDPR_CHOICES,
-        default=NEVER
-    )
-    q8 = models.CharField(
-        max_length=1,
-        choices=PDPR_CHOICES,
-        default=NEVER
-    )
-    q9 = models.CharField(
-        max_length=1,
-        choices=PDPR_CHOICES,
-        default=NEVER
-    )
-    q10 = models.CharField(
-        max_length=1,
-        choices=PDPR_CHOICES,
-        default=NEVER
-    )
-    q11 = models.CharField(
-        max_length=1,
-        choices=PDPR_CHOICES,
-        default=NEVER
-    )
-    q12 = models.CharField(
-        max_length=1,
-        choices=PDPR_CHOICES,
-        default=NEVER
-    )
-    q1 = models.CharField(
-        max_length=1,
-        choices=PDPR_CHOICES,
-        default=NEVER
-    )
-    q13 = models.CharField(
-        max_length=1,
-        choices=PDPR_CHOICES,
-        default=NEVER
-    )
-    q14 = models.CharField(
-        max_length=1,
-        choices=PDPR_CHOICES,
-        default=NEVER
-    )
-    q15 = models.CharField(
-        max_length=1,
-        choices=PDPR_CHOICES,
-        default=NEVER
-    )
-
+    q1 = models.IntegerField(choices=Scores.choices)
+    q2 = models.IntegerField(choices=Scores.choices)
+    q3 = models.IntegerField(choices=Scores.choices)
+    q4 = models.IntegerField(choices=Scores.choices)
+    q5 = models.IntegerField(choices=Scores.choices)
+    q6 = models.IntegerField(choices=Scores.choices)
+    q7 = models.IntegerField(choices=Scores.choices)
+    q8 = models.IntegerField(choices=Scores.choices)
+    q9 = models.IntegerField(choices=Scores.choices)
+    q10 = models.IntegerField(choices=Scores.choices)
+    q11 = models.IntegerField(choices=Scores.choices)
+    q12 = models.IntegerField(choices=Scores.choices)
+    q1 = models.IntegerField(choices=Scores.choices)
+    q13 = models.IntegerField(choices=Scores.choices)
+    q14 = models.IntegerField(choices=Scores.choices)
+    q15 = models.IntegerField(choices=Scores.choices)
+    
+    total = models.IntegerField(default = 0)
     def __str__(self):
-        return str(self.user + '--' + str(self.date))
+        return str(str(self.user) + '--' + str(self.date))
 
 
 

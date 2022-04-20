@@ -1,5 +1,3 @@
-from fnmatch import fnmatchcase
-from xml.sax.handler import feature_namespace_prefixes
 from django.db import models
 from django.contrib.auth.models import User
 

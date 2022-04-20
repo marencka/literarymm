@@ -17,3 +17,6 @@ def info(request):
 
 def meditation(request):
   return render(request, 'base/meditation.html', {})
+
+def report(request):
+  return render(request, 'base/pdpr.html', {})

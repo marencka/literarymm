@@ -12,7 +12,7 @@ class Quote(models.Model):
         return str(self.author + ' -- ' + self.quote + ' -- ' + 'PD Quote: ' + str(self.PDquote))
 
 class Image(models.Model):
-  image = models.ImageField()
+  image = models.ImageField(upload_to='images/')
   alt_text = models.TextField() 
 
   def __str__(self):

@@ -29,7 +29,10 @@ def meditation(request):
       return redirect('dashboard')
   else:
     form = ReflectionForm
-  return render(request, 'base/meditation.html', {'all': all, 'form': form, "quote":quote})
+
+    pic = Image.objects.all().order_by("?").first()
+
+  return render(request, 'base/meditation.html', {'all': all, 'form': form, "quote":quote, 'picture':pic})
 
 def pdpr(request):
   all = PDPR.objects.filter(user=request.user)

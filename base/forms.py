@@ -9,4 +9,3 @@ class ReflectionForm(ModelForm):
     model = Reflection 
     fields = ('text',)
     exclude = ('user',)
-

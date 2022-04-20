@@ -26,4 +26,3 @@ class Reflection(models.Model):
 
   def __str__(self):
     return str(str(self.date) + ' -- ' + self.text)
-

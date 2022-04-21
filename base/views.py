@@ -16,13 +16,13 @@ def dashboard(request):
 def info(request):
   return render(request, 'base/info.html', {})
 
-def meditation(request):
-<<<<<<< HEAD
-  return render(request, 'base/meditation.html', {})
+def pdpr2(request):
+  return render(request, 'base/pdpr2.html', {})
 
 def report(request):
   return render(request, 'base/pdpr.html', {})
-=======
+
+def meditation(request):
   quote = Quote.objects.order_by("?").first()
   all = Reflection.objects.filter(user=request.user)
   if request.method == "POST":
@@ -59,4 +59,3 @@ def pdpr(request):
 def history(request):
   past_reflections = Reflection.objects.order_by('-date').filter(user=request.user)
   return render(request, 'base/history.html', {"all": past_reflections})
->>>>>>> bc22d5c2274344e437510a12d0a910754381225d

@@ -8,4 +8,4 @@ class Profile(models.Model):
     wantPDQuotes = models.BooleanField(null=True)
 
     def __str__(self):
-        return str(self.user.first_name)
+        return str(self.user.first_name + ' ' + self.user.last_name)

@@ -1,6 +1,8 @@
 from django.db import models
 from members.models import Profile
 from django.contrib.auth.models import User
+from django.utils.safestring import mark_safe
+from django.contrib import admin
 
 # Create your models here.
 class Quote(models.Model):
@@ -14,9 +16,19 @@ class Quote(models.Model):
 class Image(models.Model):
   image = models.ImageField(upload_to='images/')
   alt_text = models.TextField() 
+  
+  def image_tag(self):
+    return mark_safe('<img src="/../../media/%s" width="200" height="200" />' % (self.image))
+
+  image_tag.allow_tags = True 
 
   def __str__(self):
     return str(self.alt_text)
+
+class ImageAdmin(admin.ModelAdmin):
+  list_display=['image_tag', 'alt_text']
+  search_fields=['alt_text']
+  ordering=['alt_text']
 
 
 class Reflection(models.Model):

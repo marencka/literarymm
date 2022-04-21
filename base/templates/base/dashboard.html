@@ -107,6 +107,9 @@
         function startMeditation() {
             window.location.href = window.location.href + "meditation/";
             // return window.location.href;
+            document.getElementById('today_ac').style.display = 'none';
+            document.getElementById('button').addEventListener('click', changeVisibility(), null);
+
         }
     </script>
 </body>

@@ -29,14 +29,16 @@ h1 {
 
 .options {
     margin:0 auto;
-    word-spacing: 40px;
-
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-around;
+    font-weight: 600;
 }
 
 .wrapper { 
     width: 1440px;
     margin: 0 auto;
-  }
+}
 
 .questions {
     margin: 0 auto;
@@ -45,14 +47,39 @@ h1 {
     font-size: 23px;
 }
 
+.question {
+    margin-bottom: 30px;
+    margin-left: 30px;
+}
+
+.partition { 
+    width: 1300px;
+    border-top: 1px solid #52726E;
+    margin-top: 0;
+    position: relative;
+    bottom: 20px;
+}
+
 .instruction {
     font-size: 25px;
     text-align: center;
     margin-left: 10px;
 }
 
-.radiobuttons {
+.submit { 
+    font-family: 'Playfair Display', sans-serif;
     font-size: 23px;
-    margin: 0 40px 0;
-    word-spacing: 50px;
+    width: 120px;
+    height: 45px;
+    border-radius: 20px;
+    background-color: #8C645C; 
+    color: #FFFFFF;
+    position: relative; 
+    left: 1250px;
+}
+
+.submit:hover { 
+    cursor: pointer;
+    opacity: 0.8; 
+    color: #000000;
 }

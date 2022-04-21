@@ -1,238 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDPR</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/pdpr.css' %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
-    rel="stylesheet">
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Literary Meditation Mindfulness</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/pdpr.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+  rel="stylesheet">
 </head>
-
 <body>
-    <div class = "wrapper">
-        <div id="container", class= "container">
+  <div class="wrapper">
+    <div id="container", class= "container">
   
-            <h1>PDPR</h1>
-                <p><strong>Parkinson's Disease Progress Report (PDPR)</strong> is a balance sheet created to give a
-                    weekly mental health score for someone with Parkinson's disease and/or their Care Partner(s) read.
-                    The PDPR will be a 15-question survey about Quality-of-Life (QoL). Stress, life, work, exercise, balance, 
-                    and overall wellness will be monitored.
-                </p>
-        </div>
-        <div class="instruction">
-            <p>
-                Please answer the following questions with regards to the past week (using a Likert scale scoring system):
-                    <p class="options">1(Never) 2(Occasionally) 3(Sometimes) 4(Often) 5(Always)<p>
+        <h1>PDPR</h1>
+            <p><strong>Parkinson's Disease Progress Report (PDPR)</strong> is a balance sheet created to give a
+                weekly mental health score for someone with Parkinson's disease and/or their Care Partner(s) read.
+                The PDPR will be a 15-question survey about Quality-of-Life (QoL). Stress, life, work, exercise, balance, 
+                and overall wellness will be monitored.
             </p>
-        </div>  
-        <div class="questions">
-           <br>
-            <p><strong>Question 1:</strong> Had difficulty functioning at work?</p>
-            <div class="radiobuttons">
-                <label><input type="radio" name="q1" id="Never" value="Never"/>Never</label>
+    </div>
+    <div class="instruction">
+        <p>
+            Please answer the following questions with regards to the past week (using a Likert scale scoring system):
+        </p>
         
-                <label><input type="radio" name="q1" id="Occasionally" value="Occasionally"/>Occasionally</label>
+      <div class="options">
+        <p>Never - 1</p>
+        <p>Occasionally - 2</p>
+        <p>Sometimes - 3</p>
+        <p>Often - 4</p>
+        <p>Always - 5</p>
+      </div>
+    </div>  
 
-                <label><input type="radio" name="q1" id="Sometimes" value="Sometimes"/>Sometimes</label>
 
-                <label><input type="radio" name="q1" id="Often" value="Often"/>Often</label>
-
-                <label><input type="radio" name="q1" id="Always" value="Always"/>Always</label>
-            </div>
-
-            <p><strong>Question 2:</strong> Had problems exercising?</p>
-            <div class="radiobuttons">
-                <label><input type="radio" name="q2" id="Never" value="Never"/>Never</label>
-        
-                <label><input type="radio" name="q2" id="Occasionally" value="Occasionally"/>Occasionally</label>
-
-                <label><input type="radio" name="q2" id="Sometimes" value="Sometimes"/>Sometimes</label>
-
-                <label><input type="radio" name="q2" id="Often" value="Often"/>Often</label>
-
-                <label><input type="radio" name="q2" id="Always" value="Always"/>Always</label>
-            </div>
-            
-            <p><strong>Question 3:</strong> Had problems sleeping?</p>
-            <div class="radiobuttons">
-                <label><input type="radio" name="q3" id="Never" value="Never"/>Never</label>
-        
-                <label><input type="radio" name="q3" id="Occasionally" value="Occasionally"/>Occasionally</label>
-
-                <label><input type="radio" name="q3" id="Sometimes" value="Sometimes"/>Sometimes</label>
-
-                <label><input type="radio" name="q3" id="Often" value="Often"/>Often</label>
-
-                <label><input type="radio" name="q3" id="Always" value="Always"/>Always</label>
-            </div>
-
-            <p><strong>Question 4:</strong> Had difficulty with daily personal cleaning/grooming and getting dressed?</p>
-            <div class="radiobuttons">
-                <label><input type="radio" name="q4" id="Never" value="Never"/>Never</label>
-        
-                <label><input type="radio" name="q4" id="Occasionally" value="Occasionally"/>Occasionally</label>
-
-                <label><input type="radio" name="q4" id="Sometimes" value="Sometimes"/>Sometimes</label>
-
-                <label><input type="radio" name="q4" id="Often" value="Often"/>Often</label>
-
-                <label><input type="radio" name="q4" id="Always" value="Always"/>Always</label>
-            </div>
-
-            <p><strong>Question 5:</strong> Had problems preparing food and eating meals?</p>
-            <div class="radiobuttons">
-                <label><input type="radio" name="q5" id="Never" value="Never"/>Never</label>
-        
-                <label><input type="radio" name="q5" id="Occasionally" value="Occasionally"/>Occasionally</label>
-
-                <label><input type="radio" name="q5" id="Sometimes" value="Sometimes"/>Sometimes</label>
-
-                <label><input type="radio" name="q5" id="Often" value="Often"/>Often</label>
-
-                <label><input type="radio" name="q5" id="Always" value="Always"/>Always</label>
-            </div>
-
-            <p><strong>Question 6:</strong> Had problems concentrating at work or at home watching TV?</p>
-            <div class="radiobuttons">
-                <label><input type="radio" name="q6" id="Never" value="Never"/>Never</label>
-        
-                <label><input type="radio" name="q6" id="Occasionally" value="Occasionally"/>Occasionally</label>
-
-                <label><input type="radio" name="q6" id="Sometimes" value="Sometimes"/>Sometimes</label>
-
-                <label><input type="radio" name="q6" id="Often" value="Often"/>Often</label>
-
-                <label><input type="radio" name="q6" id="Always" value="Always"/>Always</label>
-            </div>
-
-            <p><strong>Question 7:</strong> Had problems communicating with others?</p>
-            <div class="radiobuttons">
-                <label><input type="radio" name="q7" id="Never" value="Never"/>Never</label>
-        
-                <label><input type="radio" name="q7" id="Occasionally" value="Occasionally"/>Occasionally</label>
-
-                <label><input type="radio" name="q7" id="Sometimes" value="Sometimes"/>Sometimes</label>
-
-                <label><input type="radio" name="q7" id="Often" value="Often"/>Often</label>
-
-                <label><input type="radio" name="q7" id="Always" value="Always"/>Always</label>
-            </div>
-            
-            <p><strong>Question 8:</strong> Had pain in body, joints, or muscles?</p>
-            <div class="radiobuttons">
-                <label><input type="radio" name="q8" id="Never" value="Never"/>Never</label>
-        
-                <label><input type="radio" name="q8" id="Occasionally" value="Occasionally"/>Occasionally</label>
-
-                <label><input type="radio" name="q8" id="Sometimes" value="Sometimes"/>Sometimes</label>
-
-                <label><input type="radio" name="q8" id="Often" value="Often"/>Often</label>
-
-                <label><input type="radio" name="q8" id="Always" value="Always"/>Always</label>
-            </div>
-
-            <p><strong>Question 9:</strong> Felt sad and depressed?</p>
-            <div class="radiobuttons">
-                <label><input type="radio" name="q9" id="Never" value="Never"/>Never</label>
-        
-                <label><input type="radio" name="q9" id="Occasionally" value="Occasionally"/>Occasionally</label>
-
-                <label><input type="radio" name="q9" id="Sometimes" value="Sometimes"/>Sometimes</label>
-
-                <label><input type="radio" name="q9" id="Often" value="Often"/>Often</label>
-
-                <label><input type="radio" name="q9" id="Always" value="Always"/>Always</label>
-            </div>
-            
-            <p><strong>Question 10:</strong> Felt alone and isolated?</p>
-            <div class="radiobuttons">
-                <label><input type="radio" name="q10" id="Never" value="Never"/>Never</label>
-        
-                <label><input type="radio" name="q10" id="Occasionally" value="Occasionally"/>Occasionally</label>
-
-                <label><input type="radio" name="q10" id="Sometimes" value="Sometimes"/>Sometimes</label>
-
-                <label><input type="radio" name="q10" id="Often" value="Often"/>Often</label>
-
-                <label><input type="radio" name="q10" id="Always" value="Always"/>Always</label>
-            </div>
-            
-            <p><strong>Question 11:</strong> Felt anxious?</p>
-            <div class="radiobuttons">
-                <label><input type="radio" name="q11" id="Never" value="Never"/>Never</label>
-        
-                <label><input type="radio" name="q11" id="Occasionally" value="Occasionally"/>Occasionally</label>
-
-                <label><input type="radio" name="q11" id="Sometimes" value="Sometimes"/>Sometimes</label>
-
-                <label><input type="radio" name="q11" id="Often" value="Often"/>Often</label>
-
-                <label><input type="radio" name="q11" id="Always" value="Always"/>Always</label>
-            </div>
-            
-            <p><strong>Question 12:</strong> Felt embarrassed to be seen or go out in public?</p>
-            <div class="radiobuttons">
-                <label><input type="radio" name="q12" id="Never" value="Never"/>Never</label>
-        
-                <label><input type="radio" name="q12" id="Occasionally" value="Occasionally"/>Occasionally</label>
-
-                <label><input type="radio" name="q12" id="Sometimes" value="Sometimes"/>Sometimes</label>
-
-                <label><input type="radio" name="q12" id="Often" value="Often"/>Often</label>
-
-                <label><input type="radio" name="q12" id="Always" value="Always"/>Always</label>
-            </div>
-            
-            <p><strong>Question 13:</strong> Felt a lack of support from loved ones or close friends?</p>
-            <div class="radiobuttons">
-                <label><input type="radio" name="q13" id="Never" value="Never"/>Never</label>
-        
-                <label><input type="radio" name="q13" id="Occasionally" value="Occasionally"/>Occasionally</label>
-
-                <label><input type="radio" name="q13" id="Sometimes" value="Sometimes"/>Sometimes</label>
-
-                <label><input type="radio" name="q13" id="Often" value="Often"/>Often</label>
-
-                <label><input type="radio" name="q13" id="Always" value="Always"/>Always</label>
-            </div>
-            
-            <p><strong>Question 14:</strong> Felt un-balanced (collectively) in life-work-family-living with Parkinson's disease?</p>
-            <div class="radiobuttons">
-                <label><input type="radio" name="q14" id="Never" value="Never"/>Never</label>
-        
-                <label><input type="radio" name="q14" id="Occasionally" value="Occasionally"/>Occasionally</label>
-
-                <label><input type="radio" name="q14" id="Sometimes" value="Sometimes"/>Sometimes</label>
-
-                <label><input type="radio" name="q14" id="Often" value="Often"/>Often</label>
-
-                <label><input type="radio" name="q14" id="Always" value="Always"/>Always</label>
-            </div>
-
-            <p><strong>Question 15:</strong> Felt unable to manage (overall) daily life-challenge(s) from Parkinson's disease?</p>
-            <div class="radiobuttons">
-                <label><input type="radio" name="q15" id="Never" value="Never"/>Never</label>
-        
-                <label><input type="radio" name="q15" id="Occasionally" value="Occasionally"/>Occasionally</label>
-
-                <label><input type="radio" name="q15" id="Sometimes" value="Sometimes"/>Sometimes</label>
-
-                <label><input type="radio" name="q15" id="Often" value="Often"/>Often</label>
-
-                <label><input type="radio" name="q15" id="Always" value="Always"/>Always</label>
-            </div>
+    <div class="questions">
+      <form action="" method="POST">
+        <div class="section">
+          <h3>Life Skills</h3>
         </div>
+        <div class="partition"></div>
+        {% csrf_token %} 
+        
+        <div class="question">
+          <label for="q1">Question #1: Had difficulty functioning at work?</label>
+          {{form.q1}}
+        </div>
+
+        <div class="question">
+          <label for="q2">Question #2: Had problems exercising?</label>
+          {{form.q2}}
+        </div>
+
+        <div class="question">
+          <label for="q3">Question #3: Had problems sleeping? </label>
+          {{form.q3}}
+        </div>
+
+        <div class="question">
+          <label for="q4">Question #4: Had difficulty with daily personal cleaning/grooming and getting dressed?</label>
+          {{form.q4}}
+        </div>
+
+        <div class="question">
+          <label for="q5">Question #5: Had problems preparing food and eating meals?</label>
+          {{form.q5}}
+        </div>
+
+        <div class="question">
+          <label for="q6">Question #6: Had problems concentrating at work or at home watching TV?</label>
+          {{form.q6}}
+        </div>
+
+        <div class="question">
+          <label for="q7">Question #7: Had problems communicating with others?</label>
+          {{form.q7}}
+        </div>
+
+        <div class="question">
+          <label for="q8">Question #8: Had pain in body, joints, or muscles?</label>
+          {{form.q8}}
+        </div>
+
+        <div class="section">
+          <h3>Life Stress</h3>
+        </div>
+        <div class="partition"></div>
+        
+        <div class="question">
+          <label for="q9">Question #9: Felt sad and depressed?</label>
+          {{form.q9}}
+        </div>
+
+        <div class="question">
+          <label for="q10">Question #10: Felt sad and depressed?</label>
+          {{form.q10}}
+        </div>
+
+        <div class="question">
+          <label for="q10">Question #10: Felt sad and depressed?</label>
+          {{form.q10}}
+        </div>
+
+        <div class="question">
+          <label for="q11">Question #11: Felt anxious?</label>
+          {{form.q11}}
+        </div>
+
+        <div class="question">
+          <label for="q12">Question #12: Felt embarrassed to be seen or go out in public?</label>
+          {{form.q12}}
+        </div>
+
+        <div class="question">
+          <label for="q13">Question #13: Felt a lack of support from loved ones or close friends?</label>
+          {{form.q13}}
+        </div>
+
+        <div class="section">
+          <h3>Life Coping</h3>
+        </div>
+        <div class="partition"></div>
+
+        <div class="question">
+          <label for="q14">Question #14: Felt un-balanced (collectively) in life-work-family-living with Parkinson’s disease?</label>
+          {{form.q14}}
+        </div>
+
+        <div class="question">
+          <label for="q15">Question #15: Felt unable to manage (overall) daily life-challenge(s) from Parkinson’s disease? </label>
+          {{form.q15}}
+        </div>
+
+
+        <input type="submit" class="submit" value="Submit">
+      </form>
     </div>
 
-    
-
-
+  </div>
 </body>
-
 </html>

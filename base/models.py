@@ -13,6 +13,11 @@ class Quote(models.Model):
     def __str__(self):
         return str(self.author + ' -- ' + self.quote + ' -- ' + 'PD Quote: ' + str(self.PDquote))
 
+class QuoteAdmin(admin.ModelAdmin):
+  list_display=['quote', 'author', 'PDquote']
+  ordering=['author']
+  search_fields=['quote', 'author']
+
 class Image(models.Model):
   image = models.ImageField(upload_to='images/')
   alt_text = models.TextField() 

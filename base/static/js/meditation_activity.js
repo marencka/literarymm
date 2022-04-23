@@ -22,24 +22,6 @@ let myfunc = setInterval(function() {
 
     if ((minutes==0) && (secs == 0)) {
         document.getElementById('reflect_button').classList.add('show_button');
-        interaction();
         clearInterval(myfunc);
     }
 }, 1000);
-
-function interaction() {
-    const reflect_button = document.getElementById('reflect_button');
-    const modal_container = document.getElementById('modal_container');
-    const later_button = document.getElementById('later_button');
-    const submit_button = document.getElementById('submit_button');
-
-    reflect_button.addEventListener('click', () => {
-        modal_container.classList.add('show');
-    });
-
-    later_button.addEventListener('click', () => {
-        modal_container.classList.remove('show');
-    });
-
-// TODO: add code to submit_button to send info to the server
-}

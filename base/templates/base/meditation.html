@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meditation</title>
-    {% load static %} 
+    {% load static %}
     <link rel="stylesheet" href="{% static 'css/meditation_css.css' %}">
 
     <!-- gets rid of favison.icon error -->
@@ -19,41 +19,48 @@
 
 <body>
     <header>
-        <button id="home_button" onClick="javascript:history.go(-1);" title="go back to home page"> <span class="iconify-inline" data-icon="ant-design:home-outlined"></span> </button>
+        <button id="home_button" onClick="javascript:history.go(-1);" title="go back to home page"> <span
+                class="iconify-inline" data-icon="ant-design:home-outlined"></span> </button>
     </header>
 
-    <div class="wrapper">
-        <img src="{{picture.image.url}}" alt="" width="1000px" height="800px">
-        <div class="quote">
-            <p id="quote_text">{{ quote.quote }}</p>
-            <p id="author">{{ quote.author }}</p>
-        </div>
+    <img class="background" src="{{picture.image.url}}" alt="">
 
-        <div class="count_down">
-            <p id="timer">00:59</p>
-        </div>
+    <div class="wrappers_dad">
+        <div class="wrapper">
 
-        <div class="button_container">
-            <button id="reflect_button" title="click here to start writing your reflection">reflect</button>
-        </div>
+            <div class="column1 image">
+                <img src="{{picture.image.url}}" alt="" width="800px" height="800px">
+            </div>
 
-                {% if submitted %}
-                Your reflection has been saved. 
-              {% else %} 
-              <form action="" method="POST">
-                {% csrf_token %} 
-                {{ form.as_p }}
-            
-                <input type="submit" value="Submit">
-              </form>
-              {% endif %}
-                <!-- <label id="textbox_desription">Great job! You completed the meditation.<br> Now write down your thoughts and
-                    feelings below <br> to complete <span>the reflection</span></label>
-                <textarea id="text_box" rows="20"
-                    cols="80" placeholder="Type here"></textarea>
-                <br>
-                <button id="later_button">complete later</button>
-                <button id="submit_button">submit</button> -->
+            <div class="column2">
+                <div class="shadow_box">
+
+                    <div class="quote">
+                        <p id="quote_text">{{ quote.quote }}</p>
+                        <p id="author">{{ quote.author }}</p>
+                    </div>
+
+                    <div class="count_down">
+                        <p id="timer">00:59</p>
+                    </div>
+                </div>
+
+                <div class="textbox_cont">
+                    <div id="form">
+                        {% if submitted %}
+                        Your reflection has been saved.
+                        {% else %}
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+
+                            <input id="reflect_button" type="submit" value="Submit Your Reflection">
+                        </form>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </body>

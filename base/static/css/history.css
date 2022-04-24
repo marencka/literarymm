@@ -1,12 +1,8 @@
 body {
   margin: 0 auto;
-  background-color: #c0cfc0;
+  background-color: #cbd6cb;
 }
 
-.reflection {
-  background-color: white; 
-  
-}
 .wrapper {
   width: 1440px;
   margin: 0 auto;
@@ -23,6 +19,7 @@ h1 {
   text-align: center;
   font-family: 'Playfair Display', sans-serif;
   font-size: 50px;
+  color: black;
 }
 
 .separator { 
@@ -31,13 +28,14 @@ h1 {
   align-items: center;
   text-align: center;
   margin: 0 auto;
+  color: #2c242b;
 }
 
 .separator::before,
 .separator::after {
   content: '';
   flex: 1;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #2c242b;
 }
 
 .separator:not(:empty)::before {
@@ -48,16 +46,6 @@ h1 {
   margin-left: .25em;
 }
 
-.date {
-  background-color: #034B59;
-  width: 200px;
-  height: 35px;
-  text-align: center;
-  color: #FFFFFF;
-  font-family: 'Playfair Display', sans-serif;
-  font-size: 20px;
-}
-
 .text { 
   width: 1270px;
   font-size: 17px; 
@@ -65,20 +53,21 @@ h1 {
   position: relative;
   padding: 14px;
   margin-left: 70px;
-  background-color: white;
+  background-color: rgb(246, 246, 246);
+  border-radius: 3px;
 
 }
 
 #back { 
-  background-color: #8C645C; 
-  width: 200px;
-  border-radius: 20px; 
+  background-color: #9b746d; 
+  width: 250px;
+  height: 45px; 
+  border-radius: 12px; 
   font-family: 'Playfair Display', sans-serif; 
   color: #FFFFFF; 
-  font-size: 18px;
+  font-size: 22px;
   margin: 0 auto;
-  border: 1px solid gray;
-
+  border: 2px solid rgb(174, 174, 174);
 }
 
 #back.hover { 

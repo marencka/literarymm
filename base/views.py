@@ -47,7 +47,10 @@ def pdpr(request):
     if form.is_valid():
       pdpr = form.save(commit=False)
       pdpr.user = request.user
-      pdpr.total = pdpr.q1 + pdpr.q2 + pdpr.q3 + pdpr.q4 + pdpr.q5 + pdpr.q6 + pdpr.q7 + pdpr.q8 + pdpr.q9 + pdpr.q10 + pdpr.q11 + pdpr.q12 + pdpr.q13 + pdpr.q14 + pdpr.q15
+      pdpr.life_skills_total = pdpr.q1 + pdpr.q2 + pdpr.q3 + pdpr.q4 + pdpr.q5 + pdpr.q6 + pdpr.q7 + pdpr.q8
+      pdpr.life_stress_total = pdpr.q9 + pdpr.q10 + pdpr.q11 + pdpr.q12 + pdpr.q13 
+      pdpr.life_coping_total = pdpr.q14 + pdpr.q15
+      pdpr.quality_of_life = pdpr.q1 + pdpr.q2 + pdpr.q3 + pdpr.q4 + pdpr.q5 + pdpr.q6 + pdpr.q7 + pdpr.q8 + pdpr.q9 + pdpr.q10 + pdpr.q11 + pdpr.q12 + pdpr.q13 + pdpr.q14 + pdpr.q15
       pdpr.save()
       messages.success(request, ("Your reflection has been saved"))
       return redirect('dashboard')
@@ -59,3 +62,9 @@ def pdpr(request):
 def history(request):
   past_reflections = Reflection.objects.order_by('-date').filter(user=request.user)
   return render(request, 'base/history.html', {"all": past_reflections})
+
+def contact(request):
+  return render(request, 'base/contact.html', {})
+
+def information(request):
+  return render(request, 'base/information.html', {})

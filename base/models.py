@@ -71,7 +71,10 @@ class PDPR(models.Model):
     q14 = models.IntegerField(choices=Scores.choices)
     q15 = models.IntegerField(choices=Scores.choices)
     
-    total = models.IntegerField(default = 0)
+    life_skills_total = models.IntegerField(default = 0)
+    life_stress_total = models.IntegerField(default = 0) 
+    life_coping_total = models.IntegerField(default = 0) 
+    quality_of_life = models.IntegerField(default = 0)
     def __str__(self):
         return str(str(self.user) + '--' + str(self.date))
 

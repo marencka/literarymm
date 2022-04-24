@@ -16,7 +16,6 @@ let myfunc = setInterval(function() {
     } else {
         time_str += secs;
     }
-    console.log(time_str);
 
     document.getElementById("timer").innerHTML = time_str;
 

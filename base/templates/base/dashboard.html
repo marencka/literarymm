@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-    {% load static %} 
+    {% load static %}
     <link rel="stylesheet" href="{% static 'css/dashboard_css.css' %}">
 
     <link href="{% static 'css/iCalendar.css' %}" rel="stylesheet">
@@ -29,10 +29,11 @@
                 </div>
 
                 <div class="options">
-                    <a> <span class="iconify-inline" data-icon="carbon:information-square-filled"
+                    <a href="{% url 'information' %}"> <span class="iconify-inline" data-icon="carbon:information-square-filled"
                             style="color: #034b59;"></span> Information</a>
-                    <a> <span class="iconify-inline" data-icon="bxs:contact" style="color: #034b59;"></span> Contact</a>
-                    <a href="{% url 'logout' %}"> <span class="iconify-inline" data-icon="bxs:log-out" style="color: #034b59;"></span> Log Out</a>
+                    <a href="{% url 'contact' %}"> <span class="iconify-inline" data-icon="bxs:contact" style="color: #034b59;"></span> Contact</a>
+                    <a href="{% url 'logout' %}"> <span class="iconify-inline" data-icon="bxs:log-out"
+                            style="color: #034b59;"></span> Log Out</a>
                 </div>
 
                 <div class="user_info">
@@ -51,10 +52,17 @@
                 </div>
 
                 <div class="menu">
-                    <div class="menu_button"> <button id="today_ac" onclick="startMeditation()">Today's activity</button> </div>
-                    <a href="pdpr"><div class="menu_button"> <button id="pdpr">Parkinson’s Disease Progress Report</button> </div></a>
-                    <div class="menu_button"> <button id="random_ac" onclick="startMeditation()">Randomized reflection</button></div>
-                    <a href="history"> <div class="menu_button"><button id="past_ref">Past reflections</button> </div></a>
+                    <div class="menu_button"> <button id="today_ac" onclick="startMeditation()">Today's
+                            activity</button> </div>
+                    <a href="pdpr">
+                        <div class="menu_button"> <button id="pdpr">Parkinson’s Disease Progress Report</button>
+                        </div>
+                    </a>
+                    <div class="menu_button"> <button id="random_ac" onclick="startMeditation()">Randomized
+                            reflection</button></div>
+                    <a href="history">
+                        <div class="menu_button"><button id="past_ref">Past reflections</button> </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -109,8 +117,8 @@
             // return window.location.href;
             document.getElementById('today_ac').style.display = 'none';
             document.getElementById('button').addEventListener('click', changeVisibility(), null);
-
         }
+
     </script>
 </body>
 

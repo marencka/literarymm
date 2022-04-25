@@ -4,14 +4,20 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet">
   <title>Information</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/information.css' %}">
 </head>
 <body>
   <div class="container">
     <h1>Information</h1>
 
     <div class="about">
-      <h3>About</h3>
+      <br>
+      <h2>About</h2>
       <p>The Literary Mindfulness Meditation is a web application primarily for use by individuals with Parkinson's Disease (PD) and their caretakers to help deal with negative thoughts and anxiety.</p>
 
       <p>The goal of the application is to help a user with PD, caretakers of those with PD, or the general public build resilience, reduce stress, and improve their Quality of Life (QoL).</p>
@@ -22,13 +28,15 @@
       </p>
 
       <p>Literary Medicine and Active Reflection are tools that are not yet utilized in helping to improve the quality of life of patients with Parkinson's disease and could potentially provide a source of comfort for the patients, their caretakers, and anyone struggling with anxiety.</p>
+      <br>
     </div>
-
+    <br>
     <div class="faq">
-      <h3>Frequently Asked Questions</h3>
+      <br>
+      <h2>Frequently Asked Questions</h2>
 
       <div class="question">
-        <h4>How do I access the meditation?</h5>
+        <h3>How do I access the meditation?</h3>
         <p>After signing up for Literary Mindfulness Meditation, you will arrive at your dashboard.
           To complete the daily reflection, you click on the 'today's activity' button. You will then be taken
           to your meditation where an image and quote are there for you to reflect on. A textbox is available for you to type and save
@@ -37,14 +45,17 @@
       </div>
 
       <div class="question">
-        <h4>How do I see my previous reflection entries?</h5>
+        <h3>How do I see my previous reflection entries?</h3>
         <p>On the dashboard there is a "Past reflections" button. When you click on this, you will be 
           redirected to a page that shows your prior reflections from most recent to oldest. 
         </p>
+        <br>
       </div>
+     
 
 
     </div>
+    <br>
   </div>
 </body>
 </html>

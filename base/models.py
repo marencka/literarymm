@@ -10,6 +10,12 @@ class Quote(models.Model):
     author = models.CharField(max_length=200)
     PDquote = models.BooleanField(default=False)
 
+    def getRandomQuoteWithPD():
+      return Quote.objects.all().order_by("?").first()
+
+    def getRandomQuoteNoPD():
+      return Quote.objects.filter(PDquote=False).order_by("?").first()
+
     def __str__(self):
         return str(self.author + ' -- ' + self.quote + ' -- ' + 'PD Quote: ' + str(self.PDquote))
 

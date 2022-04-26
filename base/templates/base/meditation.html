@@ -36,8 +36,13 @@
                 <div class="shadow_box">
 
                     <div class="quote">
-                        <p id="quote_text">{{ quote.quote }}</p>
-                        <p id="author">{{ quote.author }}</p>
+                        {% if user.wantPDQuotes %}
+                            <p id="quote_text">{{ quote.quote }}</p>
+                            <p id="author">{{ quote.author }}</p>
+                        {% else %}
+                            <p id="quote_text">{{ nonPDQuote.quote }}</p>
+                            <p id="author">{{ nonPDQuote.author }}</p> 
+                        {% endif %}
                     </div>
 
                     <div class="count_down">

@@ -1,0 +1,105 @@
+body {
+  margin: 0 auto;
+  background-color: #F1F1F1;
+  font-family: 'Playfair Display', sans-serif;
+}
+
+.wrapper { 
+  width: 1440px;
+  margin: 0 auto;
+}
+
+.landing_container { 
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  margin-top: 50px;
+}
+
+.landing_content { 
+  display: flex; 
+  justify-content: space-between;
+}
+
+.landing_text p {
+  font-style: italic;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.landing_text h1 { 
+  font-size: 70px;
+  font-weight: 200;
+
+}
+
+.landing_text h3 { 
+  font-weight: 100;
+  width: 400px;
+  margin-bottom: 100px;
+  font-size: 24px;
+}
+
+
+.landing_buttons { 
+  display: flex; 
+  flex-direction: column;
+}
+
+
+.sign_up { 
+  margin-bottom: 20px;
+  width: 320px; 
+  height: 50px; 
+  background: rgba(3, 75, 89, 0.47);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 30px;
+  font-family: 'Playfair Display', sans-serif; 
+  font-size: 20px;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+}
+
+.login {
+  margin-bottom: 20px;
+  width: 320px; 
+  height: 50px; 
+  background: #52726E;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  border: none;
+  font-family: 'Playfair Display', sans-serif; 
+  font-size: 20px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.sign_up:hover { 
+  background: #9AB7BC;
+  color: black;
+}
+
+.login:hover { 
+  background: #B9C6C5;
+  color: black;
+}
+
+.learn_more {
+  width: 320px; 
+  height: 50px; 
+  background: #52726E;
+  background: rgba(147, 103, 51, 0.8);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  border: none;
+  font-family: 'Playfair Display', sans-serif; 
+  font-size: 20px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.learn_more:hover { 
+  background: #bea485; 
+  color: black;
+}

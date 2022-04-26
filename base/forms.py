@@ -5,6 +5,9 @@ from .models import Reflection, PDPR
 
 # Create a reflection 
 class ReflectionForm(ModelForm):
+  text = forms.CharField(widget=forms.Textarea(attrs={
+    'style': 'height: 300px; width: 440px; font-size: 18px; font-family: Roboto, sans-serif;'
+  }), label="", help_text="")
   class Meta:
     model = Reflection 
     fields = ('text',)

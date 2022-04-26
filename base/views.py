@@ -23,7 +23,8 @@ def report(request):
   return render(request, 'base/pdpr.html', {})
 
 def meditation(request):
-  quote = Quote.objects.order_by("?").first()
+  quote = Quote.getRandomQuoteWithPD()
+  nonPDQuote = Quote.getRandomQuoteNoPD()
   all = Reflection.objects.filter(user=request.user)
   if request.method == "POST":
     form = ReflectionForm(request.POST)
@@ -38,7 +39,7 @@ def meditation(request):
 
     pic = Image.objects.all().order_by("?").first()
 
-  return render(request, 'base/meditation.html', {'all': all, 'form': form, "quote":quote, 'picture':pic})
+  return render(request, 'base/meditation.html', {'all': all, 'form': form, "quote":quote, 'nonPDQuote':nonPDQuote, 'picture':pic})
 
 def pdpr(request):
   all = PDPR.objects.filter(user=request.user)

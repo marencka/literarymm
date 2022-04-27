@@ -69,3 +69,7 @@ def contact(request):
 
 def information(request):
   return render(request, 'base/information.html', {})
+
+def pdpr_history(request):
+  pdpr_history = PDPR.objects.filter(user=request.user) 
+  return render(request, 'base/pdpr_history.html', {'all':pdpr_history})

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Literary Mindfulness Meditation</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js'></script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/pdpr_history.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>PDPR Report History</h1>
+<br><br>
+           <h2>Scoring System</h2>
+        <div class="scoring">
+ 
+            <p></p>
+            <div class="options">
+
+                <h4>Never = 1</h4>
+                <h4>Occasionally = 2</h4>
+                <h4>Sometimes = 3</h4>
+                <h4>Often = 4</h4>
+                <h4>Always = 5</h4>
+            </div>
+            <div class="groups">
+                <h3>Life Skills</h3>
+                <p>8 questions -- score range: 8 - 40</p>
+
+                <h3>Life Stress</h3>
+                <p>5 questions -- score range: 5 - 25</p>
+
+                <h3>Life Coping</h3>
+                <p>2 questions -- score range: 2 - 10</p>
+            </div>
+
+        </div>
+
+        <br><br>
+
+        <div class="graph">
+            <canvas id="multipleLineChart"></canvas>
+
+        </div>
+
+        <button onClick="javascript:history.go(-1);">back to dashboard</button>
+
+    </div>
+
+    <script>
+        const ctx = document.getElementById('multipleLineChart').getContext('2d');
+
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [
+                    'March 4, 2022',
+                    'March 11, 2022',
+                    'March 18, 2022',
+                    'March 25, 2022',
+                    'April 8, 2022',
+                ],
+                datasets: [{
+                    label: 'Quality of Life',
+                    data: [23, 41, 44, 43, 31],
+                    borderWidth: 3,
+                    fill: false,
+                    borderColor: 'rgb(75,0,130)'
+                },
+                {
+                    label: 'Life Skills',
+                    data: [8, 21, 11, 26, 19],
+                    borderWidth: 3,
+                    fill: false,
+                    borderColor: 'rgb(34,139,34)'
+                },
+                {
+                    label: 'Life Stress',
+                    data: [11, 18, 17, 13, 24],
+                    borderWidth: 3,
+                    fill: false,
+                    borderColor: 'rgb(255,69,0)'
+                },
+                {
+                    label: 'Life Coping',
+                    data: [10, 8, 4, 8, 4, 6],
+                    borderWidth: 3,
+                    fill: false,
+                    borderColor: 'rgb(65,105,225)'
+                },
+
+                ]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>

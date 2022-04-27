@@ -12,4 +12,5 @@ urlpatterns = [
   path('userDashboard/history', views.history, name="history"),
   path('contact/', views.contact, name='contact'),
   path('information/', views.information, name='information'),
+  path('userDashboard/pdpr_history/', views.pdpr_history, name='pdpr_history'),
 ]

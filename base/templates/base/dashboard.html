@@ -54,10 +54,14 @@
                 <div class="menu">
                     <div class="menu_button"> <button id="today_ac" onclick="startMeditation()">Today's
                             activity</button> </div>
-                    <a href="pdpr">
-                        <div class="menu_button"> <button id="pdpr">Parkinson’s Disease Progress Report</button>
-                        </div>
-                    </a>
+
+                    {% if user.profile.wantPDQuotes %}
+                        <a href="pdpr">
+                            <div class="menu_button"> <button id="pdpr">Parkinson’s Disease Progress Report</button>
+                            </div>
+                        </a>
+                    {% endif %}
+                    
                     <div class="menu_button"> <button id="random_ac" onclick="startMeditation()">Randomized
                             reflection</button></div>
                     <a href="history">
@@ -116,8 +120,7 @@
 
         //Redirects to the Meditation Activity
         function startMeditation() {
-            window.location.href = window.location.href + "meditation/";
-            // return window.location.href;
+            window.location.href = window.location.href + "meditation/"
             document.getElementById('today_ac').style.display = 'none';
             document.getElementById('button').addEventListener('click', changeVisibility(), null);
         }

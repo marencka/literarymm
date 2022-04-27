@@ -4,3 +4,4 @@ from .models import Quote, Image, Reflection, PDPR, QuoteAdmin, ImageAdmin, PDPR
 admin.site.register(Quote, QuoteAdmin)
 admin.site.register(Image, ImageAdmin)
 admin.site.register(PDPR, PDPRAdmin)
+admin.site.register(Reflection)

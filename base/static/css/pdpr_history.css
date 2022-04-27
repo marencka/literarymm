@@ -4,6 +4,10 @@ body {
   font-family: 'Playfair Display', sans-serif;
 }
 
+.container {
+  width: 1440px;
+}
+
 .container h1 {
   width: 350px;
   text-align: center;
@@ -11,7 +15,7 @@ body {
 }
 
 .graph {
-  width: 1200px;
+  width: 1000px;
   margin: 0 auto;
 }
 
@@ -49,7 +53,7 @@ h2 {
 
 button { 
   position: fixed;
-  right: 100px;
+  right: 150px;
   background-color: #9b746d; 
   width: 250px;
   height: 45px; 

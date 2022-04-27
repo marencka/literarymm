@@ -87,7 +87,6 @@ class PDPR(models.Model):
 
 class PDPRAdmin(admin.ModelAdmin):
   list_display=['user', 'date', 'life_skills_total', 'life_stress_total', 'life_coping_total', 'quality_of_life']
-  search_fields=['user', 'date']
   ordering=['user']
 
 

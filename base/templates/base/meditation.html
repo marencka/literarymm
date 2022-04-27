@@ -36,7 +36,7 @@
                 <div class="shadow_box">
 
                     <div class="quote">
-                        {% if user.wantPDQuotes %}
+                        {% if user.profile.wantPDQuotes %}
                             <p id="quote_text">{{ quote.quote }}</p>
                             <p id="author">{{ quote.author }}</p>
                         {% else %}

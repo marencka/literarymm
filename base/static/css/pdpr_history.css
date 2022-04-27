@@ -48,8 +48,8 @@ h2 {
 }
 
 button { 
-  position: relative;
-  left: 1000px;
+  position: fixed;
+  right: 100px;
   background-color: #9b746d; 
   width: 250px;
   height: 45px; 
@@ -64,6 +64,7 @@ button {
 button:hover { 
   background-color: #8C645C;
   opacity: 0.4; 
+  color: black;
   font-style: italic;
   cursor: pointer;
 }

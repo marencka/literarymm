@@ -81,8 +81,13 @@ class PDPR(models.Model):
     life_stress_total = models.IntegerField(default = 0) 
     life_coping_total = models.IntegerField(default = 0) 
     quality_of_life = models.IntegerField(default = 0)
+    
     def __str__(self):
         return str(str(self.user) + '--' + str(self.date))
 
+class PDPRAdmin(admin.ModelAdmin):
+  list_display=['user', 'date', 'life_skills_total', 'life_stress_total', 'life_coping_total', 'quality_of_life']
+  search_fields=['user', 'date']
+  ordering=['user']
 
 

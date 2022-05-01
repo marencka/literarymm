@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 
+# This contains our URL's for this section of the website
 
 urlpatterns = [
   path('', views.home, name="index"),

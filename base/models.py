@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.utils.safestring import mark_safe
 from django.contrib import admin
 
-# Create your models here.
+# this is the quote model that has fields quote, author, and whether or not it is a PD quote. 
 class Quote(models.Model):
     quote = models.TextField()
     author = models.CharField(max_length=200)
@@ -19,11 +19,13 @@ class Quote(models.Model):
     def __str__(self):
         return str(self.author + ' -- ' + self.quote + ' -- ' + 'PD Quote: ' + str(self.PDquote))
 
+# this is the admin which manipulates how our client will see the information in the admin panel
 class QuoteAdmin(admin.ModelAdmin):
   list_display=['quote', 'author', 'PDquote']
   ordering=['author']
   search_fields=['quote', 'author']
 
+# This is the model for image storage. It has fields images and alt_text
 class Image(models.Model):
   image = models.ImageField(upload_to='images/')
   alt_text = models.TextField() 
@@ -36,12 +38,13 @@ class Image(models.Model):
   def __str__(self):
     return str(self.alt_text)
 
+# This is the admin model for images which allows our client to see a snippet of the image 
 class ImageAdmin(admin.ModelAdmin):
   list_display=['image_tag', 'alt_text']
   search_fields=['alt_text']
   ordering=['alt_text']
 
-
+# This is the model for our users to write their reflections which has fields user, date that it was made, and the text typed
 class Reflection(models.Model):
   user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
   date = models.DateField(auto_now_add=True)
@@ -50,6 +53,7 @@ class Reflection(models.Model):
   def __str__(self):
     return str(str(self.date) + ' -- ' + self.text)
 
+# This is the model for the progress disease report and has the questions and score options, as well as the overall scores. 
 class PDPR(models.Model):
     class Scores(models.IntegerChoices):
         NEVER = '1'
@@ -85,6 +89,7 @@ class PDPR(models.Model):
     def __str__(self):
         return str(str(self.user) + '--' + str(self.date))
 
+# This allows our client to see it differently in the admin page
 class PDPRAdmin(admin.ModelAdmin):
   list_display=['user', 'date', 'life_skills_total', 'life_stress_total', 'life_coping_total', 'quality_of_life']
   ordering=['user']

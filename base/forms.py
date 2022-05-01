@@ -3,7 +3,7 @@ from django import forms
 from django.forms import ModelForm
 from .models import Reflection, PDPR
 
-# Create a reflection 
+# This is the reflection form for a user to make during meditation
 class ReflectionForm(ModelForm):
   text = forms.CharField(widget=forms.Textarea(attrs={
     'style': 'height: 300px; width: 440px; font-size: 18px; font-family: Roboto, sans-serif;'
@@ -13,6 +13,7 @@ class ReflectionForm(ModelForm):
     fields = ('text',)
     exclude = ('user',)
 
+# This is the form to submit a PDPR
 class PDPRForm(ModelForm):
   class Meta:
     model = PDPR

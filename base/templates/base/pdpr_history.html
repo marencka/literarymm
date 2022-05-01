@@ -19,10 +19,10 @@
 <body>
     <div class="container">
         <h1>PDPR Report History</h1>
-<br><br>
-           <h2>Scoring System</h2>
+        <br><br>
+        <h2>Scoring System</h2>
         <div class="scoring">
- 
+
             <p></p>
             <div class="options">
 
@@ -45,12 +45,66 @@
 
         </div>
 
-        <br><br>
+        {% if bool %}
+        <div class="date">
+            <div id="five_date" style="display:none">{{five.date}}</div>
+            <div id="four_date" style="display:none">{{four.date}}</div>
+            <div id="three_date" style="display:none">{{three.date}}</div>
+            <div id="two_date" style="display:none">{{two.date}}</div>
+            <div id="one_date" style="display:none">{{one.date}}</div>
+        </div>
 
+        <div class="qol">
+            <div id="five_qol" style="display:none;">{{five.quality_of_life}}</div>
+            <div id="four_qol" style="display:none;">{{four.quality_of_life}}</div>
+            <div id="three_qol" style="display:none;">{{three.quality_of_life}}</div>
+            <div id="two_qol" style="display:none;">{{two.quality_of_life}}</div>
+            <div id="one_qol" style="display:none;">{{one.quality_of_life}}</div>
+        </div>
+
+        <div class="life_skills">
+            <div id="five_skills" style="display:none">{{five.life_skills_total}}</div>
+            <div id="four_skills" style="display:none">{{four.life_skills_total}}</div>
+            <div id="three_skills" style="display:none">{{three.life_skills_total}}</div>
+            <div id="two_skills" style="display:none">{{two.life_skills_total}}</div>
+            <div id="one_skills" style="display:none">{{one.life_skills_total}}</div>
+        </div>
+
+        <div class="life_stress">
+            <div id="five_stress" style="display:none">{{five.life_stress_total}}</div>
+            <div id="four_stress" style="display:none">{{four.life_stress_total}}</div>
+            <div id="three_stress" style="display:none">{{three.life_stress_total}}</div>
+            <div id="two_stress" style="display:none">{{two.life_stress_total}}</div>
+            <div id="one_stress" style="display:none">{{one.life_stress_total}}</div>
+        </div>
+
+        <div class="life_coping">
+            <div id="five_coping" style="display:none;">{{five.life_coping_total}}</div>
+            <div id="four_coping" style="display:none;">{{four.life_coping_total}}</div>
+            <div id="three_coping" style="display:none;">{{three.life_coping_total}}</div>
+            <div id="two_coping" style="display:none;">{{two.life_coping_total}}</div>
+            <div id="one_coping" style="display:none;">{{one.life_coping_total}}</div>
+        </div>
         <div class="graph">
             <canvas id="multipleLineChart"></canvas>
 
         </div>
+        {% else %}
+
+        <div class="previous">
+            {% for pdpr in all %}
+            <h5>{{pdpr.date}}</h5>
+            <div class="separation"></div>
+            <ul>
+                <li>Life Skills: {{pdpr.life_skills_total}}</li>
+                <li>Life Stress: {{pdpr.life_stress_total}}</li>
+                <li>Life Coping: {{pdpr.life_coping_total}}</li>
+                <li>Quality of Life: {{pdpr.quality_of_life}}</li>
+            </ul>
+            {% endfor %}
+        </div>
+
+        {% endif %}
 
         <button onClick="javascript:history.go(-1);">back to dashboard</button>
 
@@ -58,41 +112,70 @@
 
     <script>
         const ctx = document.getElementById('multipleLineChart').getContext('2d');
+        const five_date = document.getElementById('five_date');
+        const four_date = document.getElementById('four_date');
+        const three_date = document.getElementById('three_date');
+        const two_date = document.getElementById('two_date');
+        const one_date = document.getElementById('one_date');
+
+        const five_qol = document.getElementById('five_qol');
+        const four_qol = document.getElementById('four_qol');
+        const three_qol = document.getElementById('three_qol');
+        const two_qol = document.getElementById('two_qol');
+        const one_qol = document.getElementById('one_qol');
+
+        const five_skills = document.getElementById('five_skills');
+        const four_skills = document.getElementById('four_skills');
+        const three_skills = document.getElementById('three_skills');
+        const two_skills = document.getElementById('two_skills');
+        const one_skills = document.getElementById('one_skills');
+
+        const five_stress = document.getElementById('five_stress');
+        const four_stress = document.getElementById('four_stress');
+        const three_stress = document.getElementById('three_stress');
+        const two_stress = document.getElementById('two_stress');
+        const one_stress = document.getElementById('one_stress');
+
+        const five_coping = document.getElementById('five_coping');
+        const four_coping = document.getElementById('four_coping');
+        const three_coping = document.getElementById('three_coping');
+        const two_coping = document.getElementById('two_coping');
+        const one_coping = document.getElementById('one_coping');
 
         const chart = new Chart(ctx, {
             type: 'line',
             data: {
                 labels: [
-                    'March 4, 2022',
-                    'March 11, 2022',
-                    'March 18, 2022',
-                    'March 25, 2022',
-                    'April 8, 2022',
+                    one_date.innerHTML,
+                    two_date.innerHTML,
+                    three_date.innerHTML,
+                    four_date.innerHTML,
+                    five_date.innerHTML,
                 ],
                 datasets: [{
                     label: 'Quality of Life',
-                    data: [23, 41, 44, 43, 31],
+                    data: [one_qol.innerHTML, two_qol.innerHTML, three_qol.innerHTML, four_qol.innerHTML, five_qol.innerHTML],
                     borderWidth: 3,
                     fill: false,
                     borderColor: 'rgb(75,0,130)'
                 },
                 {
                     label: 'Life Skills',
-                    data: [8, 21, 11, 26, 19],
+                    data: [one_skills.innerHTML, two_skills.innerHTML, three_skills.innerHTML, four_skills.innerHTML, five_skills.innerHTML],
                     borderWidth: 3,
                     fill: false,
                     borderColor: 'rgb(34,139,34)'
                 },
                 {
                     label: 'Life Stress',
-                    data: [11, 18, 17, 13, 24],
+                    data: [one_stress.innerHTML, two_stress.innerHTML, three_stress.innerHTML, four_stress.innerHTML, five_stress.innerHTML],
                     borderWidth: 3,
                     fill: false,
                     borderColor: 'rgb(255,69,0)'
                 },
                 {
                     label: 'Life Coping',
-                    data: [10, 8, 4, 8, 4, 6],
+                    data: [one_coping.innerHTML, two_coping.innerHTML, three_coping.innerHTML, four_coping.innerHTML, five_coping.innerHTML],
                     borderWidth: 3,
                     fill: false,
                     borderColor: 'rgb(65,105,225)'

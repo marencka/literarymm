@@ -5,23 +5,27 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .models import Profile
 
-
+# This is a function that allows the user to login
 def login_user(request):
+  # if the form is submitted
   if request.method == "POST":
+    # get username and password, then authenticate 
     username = request.POST.get('username', 'default_value') 
     password = request.POST.get('password', 'default_value') 
     user = authenticate(request, username=username, password=password)
+    # if user is there, login
     if user is not None:
       login(request, user)
       return redirect('dashboard')
 
+    # if not, then send error message
     else: 
       messages.success(request, ("There was an error logging in. Try again..."))
       return redirect('log_in')
   else:
     return render(request, 'login.html', {})
 
-
+# This allows for a user to register
 def register_user(request):
   if request.method == 'POST':
     fname = request.POST.get('fname')
@@ -64,10 +68,11 @@ def register_user(request):
   else:
     return render(request, 'register.html')
 
-
+# This is the sign up starting webpage
 def sign_up_start(request):
   return render(request, 'signup.html')
 
+# this is the sign up continued when asking for other users 
 def signupCont(request):
   return render(request, 'signupCont.html')
 

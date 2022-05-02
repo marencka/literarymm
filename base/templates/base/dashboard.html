@@ -58,9 +58,8 @@
                             activity</button> </div>
 
                     {% if user.profile.wantPDQuotes %}
-                    <a href="pdpr">
-                        <div class="menu_button"> <button id="pdpr">Parkinson’s Disease Progress Report <span
-                                    id="disabled_msg">(available on Friday)</span></button>
+                    <a href="pdpr" id="pdpr_link">
+                        <div class="menu_button" id="pdpr_class"> <button id="pdpr">Parkinson’s Disease Progress Report</button>
                         </div>
                     </a>
                     {% endif %}
@@ -101,10 +100,13 @@
                                 after reading the quote(s) and viewing the picture. Expression of your thoughts is
                                 important; these thoughts may reflect your overall sense of welness, mood, and mental
                                 health-for-the-moment. </li>
+                            
+                            {% if user.profile.wantPDQuotes %}
                             <h3>Parkinson’s Disease Progress Report (PDPR)</h3>
                             <li id="PDPR_med">This will give you a weekly-mental health score. The PDPR will be a
                                 10-question survey about life with PD (stress levels, life-work-exercise balance, and
                                 overall wellness will be monitored). </li>
+                            {% endif %}
                         </div>
                     </div>
                     <br>

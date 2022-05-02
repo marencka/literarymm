@@ -109,6 +109,7 @@ h3 {
 .welcome {
   padding-top: 30px;
 }
+
 .welcome>div {
   text-align: center;
 }
@@ -119,7 +120,7 @@ h3 {
   align-items: center;
 }
 
-.menu_button > button {
+.menu_button>button {
   width: 470px;
   height: 95px;
   margin-bottom: 31px;
@@ -157,8 +158,14 @@ button:hover {
   background-color: #A7947A;
 }
 
-#pdpr_history:hover { 
+#pdpr_history:hover {
   background-color: #867662;
+}
+
+#disabled_msg {
+  font-size: 21px;
+  font-style: italic;
+  letter-spacing: 2px;
 }
 
 #random_ac {

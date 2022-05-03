@@ -2,7 +2,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm 
 from django.forms import ModelForm
-from .models import PDPR, Profile
+from .models import Profile
 
 # This is the register user form which allows a user to sign up
 class RegisterUserForm(UserCreationForm):

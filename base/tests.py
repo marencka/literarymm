@@ -3,6 +3,7 @@ from django.test import SimpleTestCase
 from django.urls import reverse, resolve
 from base.views import home, dashboard, meditation, pdpr, history, information, pdpr_history
 from base.forms import PDPRForm, ReflectionForm
+from base.models import Quote, PDPR
 
 
 # URL tests for base/views.py:
@@ -75,5 +76,27 @@ class TestUrls(SimpleTestCase):
         form = PDPRForm(data={})
     
         self.assertFalse(form.is_valid())
+
+# quote tests:
+# 2 in total
+
+class TestModels(TestCase):
+    def setUp(self):
+        self.q1 = Quote.objects.create(
+            quote = 'quote',
+            author = 'hi'
+        )
+
+    def test_random_quote(self):
+        self.assertEquals(self.q1.quote, 'quote')
+
+    def test_random_quote_author(self):
+        self.assertEquals(self.q1.author, 'hi')
+
+    
+    
+  
+
+
     
 

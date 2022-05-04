@@ -1,3 +1,13 @@
+/**
+ * IMPORTANT: This code wasn't written by any of us. 
+ * We used it as plug in for calendar for dashboard.html. 
+ * However, we made changes to the styling in iCalendar.css 
+ * to match overall aesthetics of the website
+ * 
+ * Source: https://github.com/nickknezevich/iCalendar
+ */
+
+
 /*
  * iCalendar v1.0-alpha
  *

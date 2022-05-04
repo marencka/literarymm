@@ -1,3 +1,10 @@
+/*  
+    IMPORTANT: This code is part of iCalendar.js plug in that wasn't written by us
+    We made some additions/changes to the styling to match the overall aesthetics of the website
+    See more in iCalendar.js
+
+    Source: https://github.com/nickknezevich/iCalendar
+ */
 [v-cloak] {
     display: none;
 }
@@ -18,16 +25,21 @@
 #cal {
     -moz-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
     -webkit-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+
+    /* changed margin and font style  */
     margin: 20px auto;
     font-family: 'Playfair Display', sans-serif;
-    
     display: table;
 }
 
 #cal .header {
     cursor: default;
+
+    /* changed background color and height of the header 
+    and removed unnecessary grdient */
     background: #fff;
     height: 40px;
+
     position: relative;
     color: #fff;
     -webkit-border-top-left-radius: 5px;
@@ -37,12 +49,15 @@
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     font-weight: bold;
+
+    /* changed font color and size */
     color: #52726E;
     font-size: 26px;
     text-shadow: 0.5px 0px 0 #222;
     text-transform: uppercase;
 }
 
+/* changed color of brackets (or arrows) allowing to switch between months */
 .brackets {
     color: #52726E;
 }
@@ -73,6 +88,7 @@
     border-top-right-radius: 5px;
 }
 
+/* changed background of "brackets" when hovering over for better visibility */
 #cal .header .button:hover {
     background-color: #c9d5c9;
 }
@@ -90,6 +106,7 @@
 
 #cal td {
     color: #2b2b2b;
+    /* changed sizing and spacing */
     width: 90px;
     height: 80px;
     line-height: 50px;
@@ -146,6 +163,7 @@ table#days td.weekday {
     font-weight: 700;
 }
 
+/* changed font style of items inside calendar to match other fonts */
 div#cal {
     font-family: 'Playfair Display', sans-serif;
 }
@@ -190,7 +208,9 @@ a.calendarLink {
 
 }
 
+/* styling for current day in the calendar */
 div.today a.calendarLink {
+    /* changed color and font styling to be more readable */
     color: #FFFFFF;
     text-shadow: 1px 0px 0 #222;
     font-weight: 700;
@@ -205,7 +225,9 @@ a.calendarLink.selected-link {
     border-radius: 50px;
 }
 
+/* styling of a date when hovering over it in the calendar */
 a.calendarLink:hover {
+    /* changed styling to match the website and be more readable */
     color: #fff;
     background: #5F5F5F;
     transition: 0.3s;
@@ -215,6 +237,7 @@ a.calendarLink:hover {
 }
 
 @media only screen and (max-width: 400px) {
+    /* adjusted sizing for better scaling of the calendar on different screen sizes */
     #cal td {
         width: 75px;
         height: 50px;

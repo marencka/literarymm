@@ -1,3 +1,4 @@
+/* Written by Alexis Danz */
 function next() { 
     document.getElementById('info1_container').style.display = 'none'; 
     document.getElementById('info2_container').style.display = 'block';

@@ -60,7 +60,7 @@ MIDDLEWARE = [
 ]
 
 
-
+#This establishes a media folder that can be invoked by url for image database calls
 ROOT_URLCONF = 'literarymm.urls'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

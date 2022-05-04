@@ -1,4 +1,4 @@
-<!-- /* Written by Alexis Danz */ -->
+<!-- /* Written by Alexis Danz and Jill O'Dell */ -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -65,6 +65,7 @@
 
           <div style="background-color: #d3ebf0; padding: 20px; border-radius: 50px; border-color: black; border-width: 0.5px; border-style: solid;">
             
+            <!-- User preferences for seeing Parkinson's quotes -->
             <label>Is the following selection correct? If not, select whichever answer best suites your preferences:</label>
             <br>
             <br>
@@ -90,6 +91,8 @@
   </body>
 </body>
 
+  <!-- This renders what preference should be prechecked on the signup page -->
+  <!-- and also allows for the prechecked option to be changed if needed -->
   <script>
     window.onload = function() {
       if (sessionStorage.getItem('wantPDQuotes') === "true") {

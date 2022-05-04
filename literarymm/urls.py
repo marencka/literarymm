@@ -25,6 +25,8 @@ urlpatterns = [
     path('', include('members.urls')),
     path('login/', include('django.contrib.auth.urls')),
 
+    #Allows for url calls to the media folder containing the Image database entries
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+#Changes Admin Panel's Display Name
 admin.site.site_header = "Literary M. M. - Administration"

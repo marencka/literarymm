@@ -10,5 +10,6 @@ urlpatterns = [
   path('userDashboard/pdpr/', views.pdpr, name="pdpr"), 
   path('userDashboard/history', views.history, name="history"),
   path('information/', views.information, name='information'),
+  path('info/', views.info, name = 'info'),
   path('userDashboard/pdpr_history/', views.pdpr_history, name='pdpr_history'),
 ]

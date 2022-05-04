@@ -61,6 +61,9 @@ def history(request):
 def information(request):
   return render(request, 'base/information.html', {})
 
+def info(request):
+  return render(request, 'base/info.html', {})
+
 # Loads the information for past PDPR's. 
 def pdpr_history(request):
   # Five most recent entries 

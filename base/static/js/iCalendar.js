@@ -203,8 +203,6 @@ class iCalendar {
                 this.selectedDate = selectedElement.getAttribute("data-id");
                 let cEvent = new Event("iCalendarDateSelected");
                 document.dispatchEvent(cEvent);
-                //this._fetchEvents();
-                //console.log(this.selectedDate);
                 event.preventDefault();
             }
         }.bind(this));

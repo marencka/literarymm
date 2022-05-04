@@ -5,6 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import Quote, Image, Reflection, PDPR
 from .forms import ReflectionForm, PDPRForm
 
+# /* Written by Alexis Danz and Jill O'Dell /*
 
 # This is the base home view that a user sees when loading website
 def home(request):

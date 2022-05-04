@@ -5,6 +5,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .models import Profile
 
+# /* Written by Alexis Danz and Jill O'Dell */
+
 # This is a function that allows the user to login
 def login_user(request):
   # if the form is submitted

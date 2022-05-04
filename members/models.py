@@ -4,6 +4,8 @@ from django.contrib import admin
 
 # Create your models here.
 
+# /* Written by Alexis Danz and Jill O'Dell */ 
+
 # This is the profile model which a user signs up with and gets their user information and whether or not they want 
 # Parkinson quotes
 class Profile(models.Model):

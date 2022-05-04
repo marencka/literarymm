@@ -1,3 +1,4 @@
+<!-- By Iuliia (Julia) Poliakova -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,9 +13,14 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/dashboard_css.css' %}">
 
+    <!-- links to JS and StyleSheet for iCalendar plug in -->
     <link href="{% static 'css/iCalendar.css' %}" rel="stylesheet">
     <script src="{% static 'js/iCalendar.js' %}"></script>
+
+    <!-- link to script disabling PDPR report for PDPR users on all days except friday -->
     <script src="{% static 'js/dashboard.js' %}"></script>
+
+    <!-- favicon -->
     <link rel="apple-touch-icon" sizes="120x120" href="{% static '/img/apple-touch-icon.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static '/img/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static '/img/favicon-16x16.png' %}">
@@ -26,6 +32,7 @@
 <body>
     <div class="wrapper">
 
+        <!-- first column to the left with user options -->
         <div class="sidebar">
             <div class="sidebar_wrapper">
                 <div class="title">
@@ -48,6 +55,7 @@
             </div>
         </div>
 
+        <!-- second column to the left with menu options -->
         <div class="hello">
             <div class="hello_wrapper">
                 <div class="welcome">
@@ -60,6 +68,8 @@
                     <div class="menu_button"> <button id="today_ac" onclick="startMeditation()">Today's
                             activity</button> </div>
 
+                    <!-- if the user didn't opt in for PDPR quotes, 
+                    then the user won't see the Progress Report button -->
                     {% if user.profile.wantPDQuotes %}
                     <a href="pdpr" id="pdpr_link">
                         <div class="menu_button" id="pdpr_class"> <button id="pdpr">Parkinson’s Disease Progress Report</button>
@@ -73,6 +83,9 @@
                         <div class="menu_button"><button id="past_ref">Past reflections</button> </div>
                     </a>
 
+                    <!-- If the user didn't opt in for PDPR quotes,
+                    then the user won't see history of the Progress Report responses
+                    since they are not eligible to fill in the Progress Report -->
                     {% if user.profile.wantPDQuotes %}
                     <a href="pdpr_history">
                         <div class="menu_button"><button id="pdpr_history">Past PDPR's</button> </div>
@@ -82,16 +95,17 @@
             </div>
         </div>
 
-
+        <!-- third column to the left with calendar and instructions -->
         <div class="info">
             <div class="info_wrapper">
+                <!-- responsible for rendering the calendar on the page -->
                 <div class="calendar_wrap">
                     <div id="calendar">
                     </div>
                 </div>
                 <div class="instructions">
                     <h1>Instructions</h1>
-                    <!-- use js to insert user instructions that are relevant to specific user type -->
+                    <!-- uses js to insert user instructions that are relevant to specific user type -->
                     <div class="user_instructions">
                         <!-- DON'T REMOVE INSTRUCTION_CONTAINER DIV. It is used by flexbox to center elements inside of the div user_instructions -->
                         <div class="instruction_container">
@@ -120,8 +134,8 @@
     </div>
 
     <script>
-
-        var iCal = new iCalendar('calendar');
+        // initializes iCalendar object to be inserted on the Dashboard page
+        let iCal = new iCalendar('calendar');
         iCal.render();
 
         //Listen to calendar date selected event

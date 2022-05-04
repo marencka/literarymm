@@ -1,3 +1,4 @@
+<!-- By Iuliia (Julia) Poliakova with edits by Alexis Danz and Jill O'Dell -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meditation</title>
     {% load static %}
+
+    <!-- stylesheer for the meditatio meditation -->
     <link rel="stylesheet" href="{% static 'css/meditation_css.css' %}">
+
+    <!-- favicon -->
     <link rel="apple-touch-icon" sizes="120x120" href="{% static '/img/apple-touch-icon.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static '/img/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static '/img/favicon-16x16.png' %}">
@@ -21,38 +26,49 @@
 </head>
 
 <body>
+    <!-- home button allowing to go back to the dashboard -->
     <header>
         <button id="home_button" onClick="javascript:history.go(-1);" title="go back to home page"> <span
                 class="iconify-inline" data-icon="ant-design:home-outlined"></span> </button>
     </header>
 
+    <!-- inserts an image pulled from the database of the website -->
     <img class="background" src="{{picture.image.url}}" alt="">
 
-    <div class="wrappers_dad">
+    <div class="wrappers_parent">
         <div class="wrapper">
 
+            <!-- holds the image in the left column-->
             <div class="column1 image">
                 <img src="{{picture.image.url}}" alt="" width="800px" height="800px">
             </div>
 
+            <!-- holds the quote and timer in the right column -->
             <div class="column2">
                 <div class="shadow_box">
 
                     <div class="quote">
+                        <!-- inserts the quote not only from the regular quotes but 
+                            also from the Parkinson's disease quotes collection
+                            (if the user opted in for the Parkinson's disease quotes)-->
                         {% if user.profile.wantPDQuotes %}
-                            <p id="quote_text">{{ quote.quote }}</p>
-                            <p id="author">{{ quote.author }}</p>
+                        <p id="quote_text">{{ quote.quote }}</p>
+                        <p id="author">{{ quote.author }}</p>
+                        <!-- uses just the regular quotes, no specific Parkinson's disease quotes
+                            (if the user optend out from the Parkinson's disease quotes) -->
                         {% else %}
-                            <p id="quote_text">{{ nonPDQuote.quote }}</p>
-                            <p id="author">{{ nonPDQuote.author }}</p> 
+                        <p id="quote_text">{{ nonPDQuote.quote }}</p>
+                        <p id="author">{{ nonPDQuote.author }}</p>
                         {% endif %}
                     </div>
 
+                    <!-- stores timer which is updated by meditation_activity.js -->
                     <div class="count_down">
                         <p id="timer">00:59</p>
                     </div>
                 </div>
 
+                <!-- area for writing the reflection -->
                 <div class="textbox_cont">
                     <div id="form">
                         {% if submitted %}
@@ -62,6 +78,7 @@
                             {% csrf_token %}
                             {{ form.as_p }}
 
+                            <!-- the reflection button that appears when the timer runs out -->
                             <input id="reflect_button" type="submit" value="Submit Your Reflection">
                         </form>
                         {% endif %}

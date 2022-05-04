@@ -1,5 +1,5 @@
 /**
- * Writen by Iuliia (Julia) Poliakova
+ * By Iuliia (Julia) Poliakova
  * Meditation Activity is responsible for maintaining the timer counting down the end of the meditation activity
  * Once the timer runs out, the button for submission of the reflection appears to allow to submit the reflection
  */

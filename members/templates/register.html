@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,9 +11,14 @@
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/register.css' %}">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
-  rel="stylesheet">
+    rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="120x120" href="{% static '/img/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static '/img/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static '/img/favicon-16x16.png' %}">
 </head>
+
 <body>
+
   <body>
     <div class="wrapper">
       <div class="container">
@@ -33,7 +39,7 @@
             <br>
             <input type="lname" name="lname" class="form-control" placeholder=" Doe" />
           </div>
-          
+
           <!-- Email input -->
           <div class="email_input">
             <label for="email">Email</label>
@@ -44,16 +50,16 @@
           <!-- Username input -->
           <div class="email_input">
             <label for="username">Username
-               {% if messages %}
-                {% for message in messages %}
-                  <div style="color: red">{{ message }}</div>
-                {% endfor %}
+              {% if messages %}
+              {% for message in messages %}
+              <div style="color: red">{{ message }}</div>
+              {% endfor %}
               {% endif %}
             </label>
-            
+
             <input type="username" name="username" class="form-control" placeholder=" johnD456" />
           </div>
-  
+
           <!-- Password input -->
           <div class="password_input">
             <label for="password">Password</label>
@@ -63,20 +69,24 @@
 
           <br>
 
-          <div style="background-color: #d3ebf0; padding: 20px; border-radius: 50px; border-color: black; border-width: 0.5px; border-style: solid;">
-            
+          <div
+            style="background-color: #d3ebf0; padding: 20px; border-radius: 50px; border-color: black; border-width: 0.5px; border-style: solid;">
+
             <!-- User preferences for seeing Parkinson's quotes -->
-            <label>Is the following selection correct? If not, select whichever answer best suites your preferences:</label>
+            <label>Is the following selection correct? If not, select whichever answer best suites your
+              preferences:</label>
             <br>
             <br>
             <input onClick="yesUncheck()" type="radio" id="Yes" name="yesPDQuotes" value="Yes">
-              <label for="Yes">YES, I'd like quotes about Parkinson's Disease included in my meditation experience.</label>
+            <label for="Yes">YES, I'd like quotes about Parkinson's Disease included in my meditation
+              experience.</label>
             <br>
             <br>
             <input onClick="noUncheck()" type="radio" id="No" name="noPDQuotes" value="No">
-              <label for="No">NO, I wouldn't like quotes about Parkinson's Disease included in my meditation experience.</label><br>
+            <label for="No">NO, I wouldn't like quotes about Parkinson's Disease included in my meditation
+              experience.</label><br>
           </div>
-          
+
           <!-- Submit button -->
           <button type="submit" class="signup">Sign up</button>
 
@@ -84,40 +94,40 @@
           <div class="register" style="text-align: center;">
             <p>Changed your mind? <a href="{% url 'index' %}">Go back to the homepage</a></p>
           </div>
-  
+
         </form>
       </div>
     </div>
   </body>
 </body>
 
-  <!-- This renders what preference should be prechecked on the signup page -->
-  <!-- and also allows for the prechecked option to be changed if needed -->
-  <script>
-    window.onload = function() {
-      if (sessionStorage.getItem('wantPDQuotes') === "true") {
-        document.getElementById('Yes').checked = "checked";
-      } else {
-        document.getElementById('No').checked = "checked";
-      }
+<!-- This renders what preference should be prechecked on the signup page -->
+<!-- and also allows for the prechecked option to be changed if needed -->
+<script>
+  window.onload = function () {
+    if (sessionStorage.getItem('wantPDQuotes') === "true") {
+      document.getElementById('Yes').checked = "checked";
+    } else {
+      document.getElementById('No').checked = "checked";
     }
+  }
 
-    function yesUncheck() {
-      var yesPDQuoteButton = document.getElementById('Yes');
-      var noPDQuoteButton = document.getElementById('No');
-      
-      yesPDQuoteButton.checked = true;
-      noPDQuoteButton.checked = false;
-    }
+  function yesUncheck() {
+    var yesPDQuoteButton = document.getElementById('Yes');
+    var noPDQuoteButton = document.getElementById('No');
 
-    function noUncheck() {
-      var yesPDQuoteButton = document.getElementById('Yes');
-      var noPDQuoteButton = document.getElementById('No');
+    yesPDQuoteButton.checked = true;
+    noPDQuoteButton.checked = false;
+  }
 
-      noPDQuoteButton.checked = true;
-      yesPDQuoteButton.checked = false;
+  function noUncheck() {
+    var yesPDQuoteButton = document.getElementById('Yes');
+    var noPDQuoteButton = document.getElementById('No');
 
-    }
-  </script>
+    noPDQuoteButton.checked = true;
+    yesPDQuoteButton.checked = false;
+
+  }
+</script>
 
 </html>

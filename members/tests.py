@@ -1,3 +1,4 @@
+# Written by Emily Pumer
 from atexit import register
 from django.test import TestCase, Client
 from django.test import SimpleTestCase
